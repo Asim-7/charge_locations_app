@@ -1,3 +1,4 @@
+/// Model representing an EVSE (Electric Vehicle Supply Equipment)
 class Evse {
   final String evseId;
   final String status;
@@ -11,6 +12,7 @@ class Evse {
     required this.powerType,
   });
 
+  /// Creates an Evse instance from JSON data
   factory Evse.fromJson(Map<String, dynamic> json) {
     return Evse(
       evseId: json['evseId'] ?? '',

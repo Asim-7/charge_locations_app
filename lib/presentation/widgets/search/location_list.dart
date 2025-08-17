@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../screens/detail/detail_screen.dart';
 import '../../widgets/search/location_list_item.dart';
 
+/// Widget to display a list of locations
 class LocationList extends StatelessWidget {
   final List locations;
   const LocationList({required this.locations, super.key});

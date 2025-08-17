@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/evse.dart';
 
+/// Widget to display details of an EVSE (Electric Vehicle Supply Equipment)
 class EvseDetailTile extends StatelessWidget {
   final Evse evse;
   const EvseDetailTile({required this.evse, super.key});

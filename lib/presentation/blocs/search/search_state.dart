@@ -1,6 +1,8 @@
 import 'package:charge_locations_app/data/models/charge_location.dart';
 import 'package:equatable/equatable.dart';
 
+/// Base class for all search states
+/// States can be initial, loading, loaded, or error
 abstract class LocationSearchState extends Equatable {
   @override
   List<Object?> get props => [];

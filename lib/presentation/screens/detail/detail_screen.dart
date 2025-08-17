@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../data/models/charge_location.dart';
 import '../../widgets/detail/evse_detail_tile.dart';
 
+/// Screen for displaying location details.
+/// BLoC struture for this screen is ready to use but not yet implemented here
+/// because the endpoint for fetching location details is not available/needed
 class DetailScreen extends StatelessWidget {
   final ChargeLocation location;
   const DetailScreen({required this.location, super.key});

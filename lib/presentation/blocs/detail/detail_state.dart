@@ -1,6 +1,8 @@
 import 'package:charge_locations_app/data/models/charge_location.dart';
 import 'package:equatable/equatable.dart';
 
+/// LocationDetailState represents the various states of the location detail
+/// States can be initial, loading, loaded, or error
 abstract class LocationDetailState extends Equatable {
   @override
   List<Object?> get props => [];

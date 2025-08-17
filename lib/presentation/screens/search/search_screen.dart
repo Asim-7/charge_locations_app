@@ -8,7 +8,7 @@ import '../../widgets/search/location_list.dart';
 import '../../widgets/search/empty_state.dart';
 import '../../widgets/search/error_retry.dart';
 
-// Search screen for finding charge locations
+/// Search screen for finding charge locations
 class SearchScreen extends StatefulWidget {
   // For widget instantiation and optimization
   const SearchScreen({super.key});

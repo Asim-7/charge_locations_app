@@ -1,5 +1,6 @@
 import 'evse.dart';
 
+/// Model representing a charge location
 class ChargeLocation {
   final String address;
   final String city;
@@ -17,6 +18,7 @@ class ChargeLocation {
     required this.evses,
   });
 
+  /// Creates a ChargeLocation instance from JSON data
   factory ChargeLocation.fromJson(Map<String, dynamic> json) {
     return ChargeLocation(
       address: json['address'] ?? '',

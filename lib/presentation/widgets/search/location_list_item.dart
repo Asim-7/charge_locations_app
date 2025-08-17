@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/charge_location.dart';
 
+/// Widget to display a single location in the search results
 class LocationListItem extends StatelessWidget {
   final ChargeLocation location;
   final VoidCallback onTap;

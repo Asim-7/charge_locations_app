@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+/// API provider for fetching charge locations and details
 class ApiProvider {
   static const String baseUrl =
       'https://app-assignment-api-test.azurewebsites.net';
@@ -20,6 +21,8 @@ class ApiProvider {
     }
   }
 
+  // This is put here just to demonstrate the API call for more details
+  // This endpoint doesn't exist yet
   Future<Map<String, dynamic>> getLocationDetail(String id) async {
     final response = await http.get(Uri.parse('$baseUrl/Location/$id'));
     if (response.statusCode == 200) {

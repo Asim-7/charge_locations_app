@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Widget to display an empty state
 class EmptyState extends StatelessWidget {
   const EmptyState({super.key});
   @override
