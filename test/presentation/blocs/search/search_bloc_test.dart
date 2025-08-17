@@ -1,6 +1,6 @@
 import 'package:charge_locations_app/data/models/charge_location.dart';
 import 'package:charge_locations_app/data/models/evse.dart';
-import 'package:charge_locations_app/data/repositories/charge_location_repository.dart';
+import 'package:charge_locations_app/domain/repositories/charge_location_repository.dart';
 import 'package:charge_locations_app/domain/usecases/fetch_locations_usecase.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_event.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_state.dart';

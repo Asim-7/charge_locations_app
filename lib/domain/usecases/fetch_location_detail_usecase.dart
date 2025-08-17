@@ -1,4 +1,4 @@
-import 'package:charge_locations_app/data/repositories/charge_location_repository.dart';
+import 'package:charge_locations_app/domain/repositories/charge_location_repository.dart';
 
 import '../../data/models/charge_location.dart';
 

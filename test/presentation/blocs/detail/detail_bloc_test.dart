@@ -1,4 +1,4 @@
-import 'package:charge_locations_app/data/repositories/charge_location_repository.dart';
+import 'package:charge_locations_app/domain/repositories/charge_location_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:charge_locations_app/presentation/blocs/detail/detail_bloc.dart';
 import 'package:charge_locations_app/presentation/blocs/detail/detail_event.dart';

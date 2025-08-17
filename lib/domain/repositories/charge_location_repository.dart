@@ -1,4 +1,4 @@
-import '../models/charge_location.dart';
+import '../../data/models/charge_location.dart';
 
 abstract class ChargeLocationRepository {
   Future<List<ChargeLocation>> searchLocations(String city);
