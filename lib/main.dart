@@ -1,67 +1,25 @@
-import 'package:charge_locations_app/bloc/post_bloc.dart';
-import 'package:charge_locations_app/bloc/post_event.dart';
-import 'package:charge_locations_app/bloc/post_state.dart';
-import 'package:charge_locations_app/data/post_repository.dart';
 import 'package:flutter/material.dart';
+import 'presentation/screens/search_screen.dart';
+import 'presentation/blocs/location_search_bloc.dart';
+import 'data/repositories/charge_location_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ChargeLocationsApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ChargeLocationsApp extends StatelessWidget {
+  const ChargeLocationsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final repository = PostRepository();
-
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter BLoC Example',
+      title: 'Charge Locations',
+      theme: ThemeData(primarySwatch: Colors.green),
       home: BlocProvider(
-        create: (context) => PostBloc(repository)..add(FetchPosts()),
-        child: const PostPage(),
-      ),
-    );
-  }
-}
-
-class PostPage extends StatelessWidget {
-  const PostPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Posts")),
-      body: BlocBuilder<PostBloc, PostState>(
-        builder: (context, state) {
-          if (state is PostLoading) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (state is PostLoaded) {
-            return ListView.builder(
-              itemCount: state.posts.length,
-              itemBuilder: (context, index) {
-                final post = state.posts[index];
-                return ListTile(
-                  title: Text(
-                    post.title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  subtitle: Text(
-                    post.body,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                );
-              },
-            );
-          } else if (state is PostError) {
-            return Center(child: Text("Error: ${state.message}"));
-          }
-          return const Center(child: Text("Press button to load posts"));
-        },
+        create:
+            (_) => LocationSearchBloc(repository: ChargeLocationRepository()),
+        child: const SearchScreen(),
       ),
     );
   }

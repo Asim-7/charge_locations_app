@@ -41,6 +41,9 @@ dependencies:
   # HTTP package for making network requests
   http: ^1.2.0
 
+  # For value equality in models/BLoC states
+  equatable: ^2.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -51,6 +54,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+
+  # Mocking framework for unit tests
+  mockito: ^5.4.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
