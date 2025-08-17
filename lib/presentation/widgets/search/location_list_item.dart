@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../data/models/charge_location.dart';
+import '../../../data/models/charge_location.dart';
 
 class LocationListItem extends StatelessWidget {
   final ChargeLocation location;

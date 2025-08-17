@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../data/models/evse.dart';
+import '../../../data/models/evse.dart';
 
 class EvseDetailTile extends StatelessWidget {
   final Evse evse;

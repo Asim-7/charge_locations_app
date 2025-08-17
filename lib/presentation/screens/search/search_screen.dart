@@ -1,10 +1,10 @@
 import 'package:charge_locations_app/presentation/blocs/search/search_event.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_state.dart';
-import 'package:charge_locations_app/presentation/widgets/location_search_bar.dart';
+import 'package:charge_locations_app/presentation/widgets/search/location_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../blocs/search/search_bloc.dart';
-import '../../widgets/location_list_item.dart';
+import '../../widgets/search/location_list_item.dart';
 import '../detail/detail_screen.dart';
 
 // Search screen for finding charge locations

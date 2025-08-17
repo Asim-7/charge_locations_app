@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/models/charge_location.dart';
+import '../../widgets/detail/evse_detail_tile.dart';
 
 class DetailScreen extends StatelessWidget {
   final ChargeLocation location;
@@ -26,11 +27,7 @@ class DetailScreen extends StatelessWidget {
             Text('Longitude: ${location.longitude}'),
             const SizedBox(height: 16),
             Text('EVSEs:', style: Theme.of(context).textTheme.titleMedium),
-            ...location.evses.map(
-              (evse) => Text(
-                '- ${evse.evseId}: ${evse.status}, ${evse.connectorType}, ${evse.powerType}',
-              ),
-            ),
+            ...location.evses.map((evse) => EvseDetailTile(evse: evse)),
           ],
         ),
       ),
