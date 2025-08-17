@@ -1,10 +1,11 @@
 import 'package:charge_locations_app/presentation/blocs/search/search_event.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_state.dart';
+import 'package:charge_locations_app/presentation/widgets/location_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../blocs/search/search_bloc.dart';
-import '../widgets/location_list_item.dart';
-import 'detail_screen.dart';
+import '../../blocs/search/search_bloc.dart';
+import '../../widgets/location_list_item.dart';
+import '../detail/detail_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -15,10 +16,17 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _controller = TextEditingController();
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   void _onSearch() {
     final city = _controller.text.trim();
-    if (city.isNotEmpty) {
+    if (city.isNotEmpty && !_isLoading) {
       context.read<LocationSearchBloc>().add(SearchLocations(city));
     }
   }
@@ -31,35 +39,33 @@ class _SearchScreenState extends State<SearchScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            TextField(
+            LocationSearchBar(
               controller: _controller,
-              decoration: InputDecoration(
-                labelText: 'Search by city',
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.search),
-                  onPressed: _onSearch,
-                ),
-              ),
-              onSubmitted: (_) => _onSearch(),
+              isLoading: _isLoading,
+              onSearch: _onSearch,
             ),
             const SizedBox(height: 16),
             Expanded(
-              child: BlocBuilder<LocationSearchBloc, LocationSearchState>(
+              child: BlocConsumer<LocationSearchBloc, LocationSearchState>(
+                listener: (context, state) {
+                  setState(() {
+                    _isLoading = state is LocationSearchLoading;
+                  });
+                },
                 builder: (context, state) {
                   if (state is LocationSearchLoading) {
                     return const Center(child: CircularProgressIndicator());
-                  }
-                  if (state is LocationSearchError) {
+                  } else if (state is LocationSearchError) {
                     return Center(child: Text(state.message));
-                  }
-                  if (state is LocationSearchLoaded) {
-                    if (state.locations.isEmpty) {
+                  } else if (state is LocationSearchLoaded) {
+                    final locations = state.locations;
+                    if (locations.isEmpty) {
                       return const Center(child: Text('No locations found.'));
                     }
                     return ListView.builder(
-                      itemCount: state.locations.length,
+                      itemCount: locations.length,
                       itemBuilder: (context, index) {
-                        final location = state.locations[index];
+                        final location = locations[index];
                         return LocationListItem(
                           location: location,
                           onTap:
@@ -73,10 +79,11 @@ class _SearchScreenState extends State<SearchScreen> {
                         );
                       },
                     );
+                  } else {
+                    return const Center(
+                      child: Text('Search for charge locations.'),
+                    );
                   }
-                  return const Center(
-                    child: Text('Search for charge locations.'),
-                  );
                 },
               ),
             ),

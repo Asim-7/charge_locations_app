@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../data/models/charge_location.dart';
+import '../../../data/models/charge_location.dart';
 
 class DetailScreen extends StatelessWidget {
   final ChargeLocation location;
