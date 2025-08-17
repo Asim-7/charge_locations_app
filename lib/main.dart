@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'presentation/screens/search_screen.dart';
-import 'presentation/blocs/location_search_bloc.dart';
+import 'presentation/blocs/search/search_bloc.dart';
 import 'data/repositories/charge_location_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,7 +1,9 @@
 import 'package:charge_locations_app/data/models/charge_location.dart';
 import 'package:charge_locations_app/data/models/evse.dart';
+import 'package:charge_locations_app/presentation/blocs/search/search_event.dart';
+import 'package:charge_locations_app/presentation/blocs/search/search_state.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:charge_locations_app/presentation/blocs/location_search_bloc.dart';
+import 'package:charge_locations_app/presentation/blocs/search/search_bloc.dart';
 import 'package:charge_locations_app/data/repositories/charge_location_repository.dart';
 
 class MockRepository implements ChargeLocationRepository {
