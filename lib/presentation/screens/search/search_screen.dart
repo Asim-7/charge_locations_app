@@ -4,8 +4,9 @@ import 'package:charge_locations_app/presentation/widgets/search/location_search
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../blocs/search/search_bloc.dart';
-import '../../widgets/search/location_list_item.dart';
-import '../detail/detail_screen.dart';
+import '../../widgets/search/location_list.dart';
+import '../../widgets/search/empty_state.dart';
+import '../../widgets/search/error_retry.dart';
 
 // Search screen for finding charge locations
 class SearchScreen extends StatefulWidget {
@@ -70,87 +71,19 @@ class _SearchScreenState extends State<SearchScreen> {
                   if (state is LocationSearchLoading) {
                     return const Center(child: CircularProgressIndicator());
                   } else if (state is LocationSearchError) {
-                    return _ErrorRetry(
+                    return ErrorRetry(
                       message: state.message,
                       onRetry: _onSearch,
                     );
                   } else if (state is LocationSearchLoaded) {
-                    return _LocationList(locations: state.locations);
+                    return LocationList(locations: state.locations);
                   }
-                  return const _EmptyState();
+                  return const EmptyState();
                 },
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class _LocationList extends StatelessWidget {
-  final List locations;
-  const _LocationList({required this.locations});
-
-  @override
-  Widget build(BuildContext context) {
-    if (locations.isEmpty) {
-      return const _EmptyState();
-    }
-    return ListView.builder(
-      itemCount: locations.length,
-      itemBuilder: (context, index) {
-        final location = locations[index];
-        return LocationListItem(
-          location: location,
-          onTap:
-              () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => DetailScreen(location: location),
-                ),
-              ),
-        );
-      },
-    );
-  }
-}
-
-class _EmptyState extends StatelessWidget {
-  const _EmptyState();
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Search for charge locations.',
-        semanticsLabel: 'Prompt to search for charge locations',
-      ),
-    );
-  }
-}
-
-class _ErrorRetry extends StatelessWidget {
-  final String message;
-  final VoidCallback onRetry;
-  const _ErrorRetry({required this.message, required this.onRetry});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            message,
-            style: const TextStyle(color: Colors.red),
-            semanticsLabel: 'Error message',
-          ),
-          const SizedBox(height: 8),
-          ElevatedButton(
-            onPressed: onRetry,
-            child: const Text('Retry', semanticsLabel: 'Retry search'),
-          ),
-        ],
       ),
     );
   }

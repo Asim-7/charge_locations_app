@@ -1,0 +1,32 @@
+import 'package:charge_locations_app/presentation/widgets/search/empty_state.dart';
+import 'package:flutter/material.dart';
+import '../../screens/detail/detail_screen.dart';
+import '../../widgets/search/location_list_item.dart';
+
+class LocationList extends StatelessWidget {
+  final List locations;
+  const LocationList({required this.locations, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    if (locations.isEmpty) {
+      return const EmptyState();
+    }
+    return ListView.builder(
+      itemCount: locations.length,
+      itemBuilder: (context, index) {
+        final location = locations[index];
+        return LocationListItem(
+          location: location,
+          onTap:
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => DetailScreen(location: location),
+                ),
+              ),
+        );
+      },
+    );
+  }
+}
