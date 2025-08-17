@@ -17,13 +17,13 @@ class DetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Address: \\n${location.address}',
+              'Address: ${location.address}',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            Text('City: \\n${location.city}'),
-            Text('Country: \\n${location.country}'),
-            Text('Latitude: \\n${location.latitude}'),
-            Text('Longitude: \\n${location.longitude}'),
+            Text('City: ${location.city}'),
+            Text('Country: ${location.country}'),
+            Text('Latitude: ${location.latitude}'),
+            Text('Longitude: ${location.longitude}'),
             const SizedBox(height: 16),
             Text('EVSEs:', style: Theme.of(context).textTheme.titleMedium),
             ...location.evses.map(

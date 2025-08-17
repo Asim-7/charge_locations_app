@@ -9,10 +9,7 @@ class ApiProvider {
     final response = await http.get(
       Uri.parse('$baseUrl/Locations?city=$city'),
       // using header so request don't fail due to missing header or something
-      headers: {
-        'Accept': 'application/json',
-        'User-Agent': 'Mozilla/5.0', // Mimic a browser
-      },
+      headers: {'Accept': 'application/json'},
     );
 
     if (response.statusCode == 200) {
