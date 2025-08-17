@@ -16,6 +16,7 @@ class ChargeLocationsApp extends StatelessWidget {
     return MaterialApp(
       title: 'Charge Locations',
       theme: ThemeData(primarySwatch: Colors.green),
+      debugShowCheckedModeBanner: false,
       home: BlocProvider(
         create:
             (_) => LocationSearchBloc(repository: ChargeLocationRepository()),
