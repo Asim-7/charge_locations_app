@@ -27,3 +27,8 @@ class LocationSearchError extends LocationSearchState {
   @override
   List<Object?> get props => [message];
 }
+
+class LocationSearchCacheLoaded extends LocationSearchState {
+  final List<dynamic> cachedLocations;
+  LocationSearchCacheLoaded(this.cachedLocations);
+}

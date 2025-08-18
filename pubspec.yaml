@@ -47,6 +47,9 @@ dependencies:
   # Service locator for dependency injection
   get_it: ^7.6.0
 
+  # Local storage for caching
+  shared_preferences: ^2.2.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

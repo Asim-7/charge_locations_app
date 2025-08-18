@@ -33,6 +33,20 @@ class ChargeLocation {
     );
   }
 
+  /// Returns the count of available EVSEs
   int get availableEvseCount =>
       evses.where((e) => e.status == 'AVAILABLE').length;
+
+  /// Converts the ChargeLocation instance to JSON format
+  Map<String, dynamic> toJson() {
+    return {
+      'address': address,
+      'city': city,
+      'country': country,
+      'latitude': latitude,
+      'longitude': longitude,
+      'evses': evses.map((e) => e.toJson()).toList(),
+      // Add other fields as needed
+    };
+  }
 }

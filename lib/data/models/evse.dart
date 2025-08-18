@@ -21,4 +21,14 @@ class Evse {
       powerType: json['powerType'] ?? '',
     );
   }
+
+  /// Converts the Evse instance to JSON format
+  Map<String, dynamic> toJson() {
+    return {
+      'evseId': evseId,
+      'status': status,
+      'connectorType': connectorType,
+      'powerType': powerType,
+    };
+  }
 }

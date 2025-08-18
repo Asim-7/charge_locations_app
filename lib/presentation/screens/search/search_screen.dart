@@ -22,6 +22,15 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _controller = TextEditingController();
 
+  // Load cached locations After initializing the state
+  @override
+  void initState() {
+    super.initState();
+
+    // Load cached locations
+    context.read<LocationSearchBloc>().add(LoadCachedLocations());
+  }
+
   // Dispose the controller when the widget is removed from the widget tree
   @override
   void dispose() {

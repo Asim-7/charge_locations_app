@@ -14,3 +14,5 @@ class SearchLocations extends LocationSearchEvent {
   @override
   List<Object?> get props => [city];
 }
+
+class LoadCachedLocations extends LocationSearchEvent {}
