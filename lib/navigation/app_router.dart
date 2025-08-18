@@ -11,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      /// Route for the search screen with its BlocProvider
       case searchScreenRoute:
         return MaterialPageRoute(
           builder:
@@ -19,11 +20,14 @@ class AppRouter {
                 child: const SearchScreen(),
               ),
         );
+
+      // Route for the detail screen
       case detailScreenRoute:
         final location = settings.arguments as ChargeLocation;
         return MaterialPageRoute(
           builder: (_) => DetailScreen(location: location),
         );
+
       // Add more routes here
       default:
         return MaterialPageRoute(builder: (_) => NoRoute(name: settings.name));
