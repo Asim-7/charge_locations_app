@@ -1,6 +1,6 @@
+import 'package:charge_locations_app/navigation/app_router.dart';
 import 'package:charge_locations_app/presentation/widgets/search/empty_state.dart';
 import 'package:flutter/material.dart';
-import '../../screens/detail/detail_screen.dart';
 import '../../widgets/search/location_list_item.dart';
 
 /// Widget to display a list of locations
@@ -20,11 +20,10 @@ class LocationList extends StatelessWidget {
         return LocationListItem(
           location: location,
           onTap:
-              () => Navigator.push(
+              () => Navigator.pushNamed(
                 context,
-                MaterialPageRoute(
-                  builder: (_) => DetailScreen(location: location),
-                ),
+                detailScreenRoute,
+                arguments: location,
               ),
         );
       },
