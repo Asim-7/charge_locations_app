@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 /// Widget to display an empty state
 class EmptyState extends StatelessWidget {
-  const EmptyState({super.key});
+  final String message;
+  const EmptyState({super.key, required this.message});
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Text(
-        'Search for charge locations.',
+        message,
         semanticsLabel: 'Prompt to search for charge locations',
       ),
     );

@@ -11,7 +11,7 @@ class LocationList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (locations.isEmpty) {
-      return const EmptyState();
+      return const EmptyState(message: 'No locations found.');
     }
     return ListView.builder(
       itemCount: locations.length,

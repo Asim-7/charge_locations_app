@@ -78,7 +78,9 @@ class _SearchScreenState extends State<SearchScreen> {
                   } else if (state is LocationSearchLoaded) {
                     return LocationList(locations: state.locations);
                   }
-                  return const EmptyState();
+                  return const EmptyState(
+                    message: 'Search for charge locations.',
+                  );
                 },
               ),
             ),
