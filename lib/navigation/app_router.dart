@@ -9,6 +9,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// AppRouter class to handle navigation
 class AppRouter {
+  static const String searchScreenRoute = '/';
+  static const String detailScreenRoute = '/detailScreenRoute';
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       /// Route for the search screen with its BlocProvider
@@ -34,6 +37,3 @@ class AppRouter {
     }
   }
 }
-
-const String searchScreenRoute = '/';
-const String detailScreenRoute = '/detailScreenRoute';

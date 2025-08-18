@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/data/providers/api_provider.dart';
 import 'package:charge_locations_app/data/repositories/charge_location_repository_impl.dart';
 import 'package:charge_locations_app/domain/repositories/charge_location_repository.dart';
 import 'package:charge_locations_app/domain/usecases/fetch_locations_usecase.dart';
@@ -9,17 +10,20 @@ final diInstance = GetIt.instance;
 
 /// Service Locator for dependency injection
 void setupLocator() {
-  // Register repositories
+  // Register API provider
+  diInstance.registerLazySingleton<ApiProvider>(() => ApiProvider());
+
+  // Register repositorie
   diInstance.registerLazySingleton<ChargeLocationRepository>(
-    () => ChargeLocationRepositoryImpl(),
+    () => ChargeLocationRepositoryImpl(apiProvider: diInstance<ApiProvider>()),
   );
 
-  // Register usecases
+  // Register usecase
   diInstance.registerLazySingleton(
     () => FetchLocationsUsecase(diInstance<ChargeLocationRepository>()),
   );
 
-  // Register blocs
+  // Register bloc
   diInstance.registerFactory(
     () => LocationSearchBloc(fetchLocations: diInstance()),
   );

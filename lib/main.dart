@@ -17,7 +17,7 @@ class ChargeLocationsApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,
-      initialRoute: searchScreenRoute,
+      initialRoute: AppRouter.searchScreenRoute,
     );
   }
 }

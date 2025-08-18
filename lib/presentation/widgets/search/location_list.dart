@@ -22,7 +22,7 @@ class LocationList extends StatelessWidget {
           onTap:
               () => Navigator.pushNamed(
                 context,
-                detailScreenRoute,
+                AppRouter.detailScreenRoute,
                 arguments: location,
               ),
         );
