@@ -20,15 +20,4 @@ class ApiProvider {
       throw Exception('Failed to load locations');
     }
   }
-
-  // This is put here just to demonstrate the API call for more details
-  // This endpoint doesn't exist yet
-  Future<Map<String, dynamic>> getLocationDetail(String id) async {
-    final response = await http.get(Uri.parse('$baseUrl/Location/$id'));
-    if (response.statusCode == 200) {
-      return json.decode(response.body) as Map<String, dynamic>;
-    } else {
-      throw Exception('Failed to load location detail');
-    }
-  }
 }

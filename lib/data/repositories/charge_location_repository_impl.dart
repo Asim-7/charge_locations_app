@@ -13,10 +13,4 @@ class ChargeLocationRepositoryImpl implements ChargeLocationRepository {
         .map<ChargeLocation>((json) => ChargeLocation.fromJson(json))
         .toList();
   }
-
-  @override
-  Future<ChargeLocation> fetchLocationDetail(String locationId) async {
-    final json = await _api.getLocationDetail(locationId);
-    return ChargeLocation.fromJson(json);
-  }
 }

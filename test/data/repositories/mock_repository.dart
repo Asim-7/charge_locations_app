@@ -5,25 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 class MockRepository implements ChargeLocationRepository {
   @override
-  Future<ChargeLocation> fetchLocationDetail(String locationId) async {
-    return ChargeLocation(
-      address: 'Address 1',
-      city: 'Amsterdam',
-      country: 'Netherlands',
-      latitude: 52.3731,
-      longitude: 4.8997,
-      evses: [
-        Evse(
-          evseId: 'EVSE1',
-          status: 'AVAILABLE',
-          connectorType: 'IEC_62196_T2',
-          powerType: 'AC_3_PHASE',
-        ),
-      ],
-    );
-  }
-
-  @override
   Future<List<ChargeLocation>> searchLocations(String city) async {
     return [
       ChargeLocation(
