@@ -44,6 +44,9 @@ dependencies:
   # For value equality in models/BLoC states
   equatable: ^2.0.5
 
+  # Service locator for dependency injection
+  get_it: ^7.6.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
