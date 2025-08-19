@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
             body: _screens[selectedIndex],
             bottomNavigationBar: HomeBottomNavBar(
               accentGreen: accentGreen,
+              selectedIndex: selectedIndex,
               onItemTapped:
                   (index) =>
                       context.read<BottomNavCubit>().setSelectedIndex(index),
