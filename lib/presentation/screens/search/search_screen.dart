@@ -50,11 +50,15 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const accentGreen = Color(0xFF6CF05A);
+
     return Scaffold(
+      backgroundColor: const Color(0xFFF4F6F8),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Title
               Text(
@@ -83,7 +87,20 @@ class _SearchScreenState extends State<SearchScreen> {
                   );
                 },
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 18),
+
+              // Current location
+              Row(
+                children: [
+                  Icon(Icons.my_location, color: accentGreen, size: 23),
+                  const SizedBox(width: 8),
+                  const Text(
+                    'Current location',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 22),
 
               // BlocBuilder for location search results
               Expanded(
