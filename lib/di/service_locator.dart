@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/presentation/bloc/bottom_nav_cubit.dart';
 import 'package:charge_locations_app/data/local/local_cache_service.dart';
 import 'package:charge_locations_app/data/providers/api_provider.dart';
 import 'package:charge_locations_app/data/repositories/charge_location_repository_impl.dart';
@@ -12,6 +13,9 @@ final diInstance = GetIt.instance;
 
 /// Service Locator for dependency injection
 void setupLocator() {
+  // Register BottomNavCubit
+  diInstance.registerLazySingleton(() => BottomNavCubit());
+
   // Register API provider
   diInstance.registerLazySingleton<ApiProvider>(() => ApiProvider());
 
