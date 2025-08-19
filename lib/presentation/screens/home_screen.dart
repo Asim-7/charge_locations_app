@@ -16,11 +16,9 @@ class HomeScreen extends StatelessWidget {
       create: (_) => diInstance<LocationSearchBloc>(),
       child: const SearchScreen(),
     ),
+    const Center(child: Text('📍 Map Screen', style: TextStyle(fontSize: 24))),
     const Center(
       child: Text('👤 Profile Screen', style: TextStyle(fontSize: 24)),
-    ),
-    const Center(
-      child: Text('⚙️ Settings Screen', style: TextStyle(fontSize: 24)),
     ),
   ];
 
@@ -35,7 +33,8 @@ class HomeScreen extends StatelessWidget {
         builder: (context, selectedIndex) {
           return Scaffold(
             backgroundColor: bgColor,
-            body: _screens[selectedIndex],
+            // using IndexedStack to preserve state
+            body: IndexedStack(index: selectedIndex, children: _screens),
             bottomNavigationBar: HomeBottomNavBar(
               accentGreen: accentGreen,
               selectedIndex: selectedIndex,
