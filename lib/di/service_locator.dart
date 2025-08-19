@@ -1,4 +1,4 @@
-import 'package:charge_locations_app/presentation/bloc/bottom_nav_cubit.dart';
+import 'package:charge_locations_app/presentation/blocs/navigation/bottom_nav_cubit.dart';
 import 'package:charge_locations_app/data/local/local_cache_service.dart';
 import 'package:charge_locations_app/data/providers/api_provider.dart';
 import 'package:charge_locations_app/data/repositories/charge_location_repository_impl.dart';

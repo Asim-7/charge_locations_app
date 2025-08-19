@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/home/home_bottom_nav_bar.dart';
 import 'main_content_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:charge_locations_app/presentation/bloc/bottom_nav_cubit.dart';
+import 'package:charge_locations_app/presentation/blocs/navigation/bottom_nav_cubit.dart';
 import 'package:charge_locations_app/di/service_locator.dart';
 
 class HomeScreen extends StatelessWidget {

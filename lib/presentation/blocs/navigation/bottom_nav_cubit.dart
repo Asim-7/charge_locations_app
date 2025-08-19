@@ -1,6 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Cubit to manage bottom navigation state
+/// Emits the currently selected index of the bottom navigation bar
 class BottomNavCubit extends Cubit<int> {
   static const _key = 'selected_nav_index';
 
