@@ -1,4 +1,5 @@
-import 'package:charge_locations_app/presentation/screens/chargers_screen.dart';
+import 'package:charge_locations_app/data/models/charge_location.dart';
+import 'package:charge_locations_app/presentation/screens/detail/detail_screen.dart';
 import 'package:charge_locations_app/presentation/widgets/router/no_route.dart';
 import 'package:flutter/material.dart';
 
@@ -9,13 +10,11 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       // Route for the detail screen
-      //final location = settings.arguments as ChargeLocation;
-      // return MaterialPageRoute(
-      //   builder: (_) => DetailScreen(location: location),
-      // );
-
       case detailScreenRoute:
-        return MaterialPageRoute(builder: (_) => ChargersScreen());
+        final location = settings.arguments as ChargeLocation;
+        return MaterialPageRoute(
+          builder: (_) => DetailScreen(location: location),
+        );
 
       // Add more routes here
       default:

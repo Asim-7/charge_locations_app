@@ -1,6 +1,6 @@
 import 'package:charge_locations_app/presentation/blocs/search/search_bloc.dart';
+import 'package:charge_locations_app/presentation/screens/chargers_screen.dart';
 import 'package:charge_locations_app/presentation/screens/search/search_screen.dart';
-import 'package:charge_locations_app/presentation/screens/search_screen_v2.dart';
 import 'package:flutter/material.dart';
 import '../widgets/home/home_bottom_nav_bar.dart';
 import 'main_content_screen.dart';
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       child: const SearchScreen(),
     ),
     //     const Center(child: Text('📍 Map Screen', style: TextStyle(fontSize: 24))),
-    const SearchScreenV2(),
+    const ChargersScreen(),
     const Center(
       child: Text('👤 Profile Screen', style: TextStyle(fontSize: 24)),
     ),

@@ -28,6 +28,7 @@ class LocationListItem extends StatelessWidget {
             : Colors.red.withAlpha((0.13 * 255).toInt());
     final icon = isMostlyAvailable ? Icons.check_circle : Icons.cancel;
     final iconColor = isMostlyAvailable ? accentGreen : Colors.red;
+    final iconBgLogo = Color(0xFFE8F5E9);
 
     // Split address at first comma
     String address = location.address;
@@ -64,13 +65,13 @@ class LocationListItem extends StatelessWidget {
               // Leading icon (location pin)
               Container(
                 decoration: BoxDecoration(
-                  color: accentGreen.withAlpha((0.09 * 255).toInt()),
+                  color: iconBgLogo,
                   shape: BoxShape.circle,
                 ),
                 padding: const EdgeInsets.all(10),
                 child: const Icon(
                   Icons.ev_station,
-                  color: accentGreen,
+                  color: Colors.black,
                   size: 28,
                 ),
               ),
