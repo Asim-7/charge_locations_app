@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class HomeBottomNavBar extends StatelessWidget {
   final Color accentGreen;
-  const HomeBottomNavBar({required this.accentGreen, super.key});
+  final void Function(int) onItemTapped;
+  const HomeBottomNavBar({
+    required this.accentGreen,
+    required this.onItemTapped,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +17,13 @@ class HomeBottomNavBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(26),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      margin: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 30, left: 20, right: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
             icon: Icon(Icons.home_rounded, color: accentGreen, size: 28),
-            onPressed: () {},
+            onPressed: () => onItemTapped(0),
           ),
           IconButton(
             icon: const Icon(
@@ -26,11 +31,11 @@ class HomeBottomNavBar extends StatelessWidget {
               color: Colors.grey,
               size: 28,
             ),
-            onPressed: () {},
+            onPressed: () => onItemTapped(1),
           ),
           IconButton(
             icon: const Icon(Icons.map_outlined, color: Colors.grey, size: 28),
-            onPressed: () {},
+            onPressed: () => onItemTapped(2),
           ),
           IconButton(
             icon: const Icon(
@@ -38,7 +43,7 @@ class HomeBottomNavBar extends StatelessWidget {
               color: Colors.grey,
               size: 28,
             ),
-            onPressed: () {},
+            onPressed: () => onItemTapped(3),
           ),
         ],
       ),
