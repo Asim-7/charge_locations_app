@@ -1,4 +1,5 @@
 import 'package:charge_locations_app/di/service_locator.dart';
+import 'package:charge_locations_app/navigation/app_router.dart';
 import 'package:charge_locations_app/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class ChargeLocationsApp extends StatelessWidget {
       title: 'Charge Locations',
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRouter.generateRoute,
       home: const HomeScreen(),
     );
   }
