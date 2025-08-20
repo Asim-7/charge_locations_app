@@ -23,7 +23,7 @@ class DistanceEnergyRow extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: AppTheme.searchCard,
+              color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(
@@ -67,7 +67,7 @@ class DistanceEnergyRow extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: AppTheme.searchCard,
+              color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(

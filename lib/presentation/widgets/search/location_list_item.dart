@@ -24,7 +24,7 @@ class LocationListItem extends StatelessWidget {
 
     // Colors & styles
     final accentGreen = AppTheme.accentGreen;
-    final cardColor = AppTheme.searchCard;
+    final cardColor = Theme.of(context).cardColor;
     final iconBg =
         isMostlyAvailable
             ? AppTheme.searchListAvailableBg

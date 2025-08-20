@@ -16,7 +16,7 @@ class ConnectorItem extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: Container(
         decoration: BoxDecoration(
-          color: AppTheme.searchCard,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: AppTheme.searchCardBorder),
         ),

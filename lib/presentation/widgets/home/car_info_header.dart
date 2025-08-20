@@ -71,8 +71,8 @@ class CarInfoHeader extends StatelessWidget {
                   ),
                   child: Text(
                     '$notificationCount',
-                    style: const TextStyle(
-                      color: AppTheme.searchCard,
+                    style: TextStyle(
+                      color: Theme.of(context).cardColor,
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),

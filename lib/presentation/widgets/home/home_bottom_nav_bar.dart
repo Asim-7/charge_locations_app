@@ -24,7 +24,7 @@ class HomeBottomNavBar extends StatelessWidget {
     ];
     return Container(
       decoration: BoxDecoration(
-        color: AppTheme.searchCard,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(26),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),

@@ -17,7 +17,7 @@ class BatteryWidget extends StatelessWidget {
       width: 70,
       height: 120,
       decoration: BoxDecoration(
-        color: AppTheme.searchCard,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(

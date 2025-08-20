@@ -23,7 +23,7 @@ class LocationSearchBar extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: AppTheme.searchCard,
+              color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(14),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -60,7 +60,7 @@ class LocationSearchBar extends StatelessWidget {
         // Filter button
         Container(
           decoration: BoxDecoration(
-            color: AppTheme.searchCard,
+            color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(14),
           ),
           padding: const EdgeInsets.all(14),

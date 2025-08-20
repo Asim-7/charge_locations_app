@@ -13,7 +13,7 @@ class ChargersDateTimePickerRow extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: AppTheme.searchCard,
+              color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(13),
               border: Border.all(color: AppTheme.searchCardBorder),
             ),
@@ -37,7 +37,7 @@ class ChargersDateTimePickerRow extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: AppTheme.searchCard,
+              color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(13),
               border: Border.all(color: AppTheme.searchCardBorder),
             ),
