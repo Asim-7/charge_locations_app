@@ -2,6 +2,7 @@ import 'package:charge_locations_app/data/models/charge_location.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/connector_list.dart';
 import 'package:charge_locations_app/utils/address_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 
 class ChargersScreen extends StatelessWidget {
   final ChargeLocation location;
@@ -10,16 +11,13 @@ class ChargersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const accentGreen = Color(0xFF6CF05A);
-    const subtitleColor = Colors.grey;
-
     // Split address using reusable function from utils
     final addressParts = splitAddress(location.address);
     final titleText = addressParts[0];
     final subtitleText = addressParts[1];
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF4F6F8),
+      backgroundColor: AppTheme.backgroundColor,
       body: Stack(
         children: [
           // Gradient header outside SafeArea
@@ -27,14 +25,10 @@ class ChargersScreen extends StatelessWidget {
             height: 200,
             width: double.infinity,
             decoration: const BoxDecoration(
-              // color: accentGreen,
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFFE0F7FA), // Light cyan
-                  Color(0x00E0F7FA), // Transparent fade
-                ],
+                colors: [AppTheme.gradientStart, AppTheme.gradientEnd],
               ),
             ),
           ),
@@ -48,9 +42,9 @@ class ChargersScreen extends StatelessWidget {
                 children: [
                   // Back button overlay
                   CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppTheme.cardBackground,
                     child: IconButton(
-                      icon: const Icon(Icons.arrow_back, color: Colors.black),
+                      icon: const Icon(Icons.arrow_back, color: AppTheme.icon),
                       onPressed: () => Navigator.pop(context),
                     ),
                   ),
@@ -68,12 +62,15 @@ class ChargersScreen extends StatelessWidget {
                   const SizedBox(height: 5),
                   Text(
                     subtitleText,
-                    style: TextStyle(fontSize: 14, color: subtitleColor),
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: AppTheme.subtitleColor,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   Row(
                     children: [
-                      const Icon(Icons.star, color: Colors.amber, size: 17),
+                      const Icon(Icons.star, color: AppTheme.star, size: 17),
                       const SizedBox(width: 2),
                       const Text(
                         '4.5',
@@ -84,29 +81,32 @@ class ChargersScreen extends StatelessWidget {
                       ),
                       Text(
                         ' (56 Reviews)',
-                        style: TextStyle(color: subtitleColor),
+                        style: const TextStyle(color: AppTheme.subtitleColor),
                       ),
                       const Spacer(),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
+                          color: AppTheme.iconButtonBg,
                           borderRadius: BorderRadius.circular(13),
                         ),
                         child: IconButton(
-                          icon: const Icon(Icons.sync_alt, color: Colors.black),
+                          icon: const Icon(
+                            Icons.sync_alt,
+                            color: AppTheme.icon,
+                          ),
                           onPressed: () {},
                         ),
                       ),
                       const SizedBox(width: 6),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
+                          color: AppTheme.iconButtonBg,
                           borderRadius: BorderRadius.circular(13),
                         ),
                         child: IconButton(
                           icon: const Icon(
                             Icons.favorite_border,
-                            color: Colors.black,
+                            color: AppTheme.favoriteBorder,
                           ),
                           onPressed: () {},
                         ),
@@ -123,7 +123,7 @@ class ChargersScreen extends StatelessWidget {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: AppTheme.chipBackground,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: const Text(
@@ -138,7 +138,7 @@ class ChargersScreen extends StatelessWidget {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: AppTheme.chipBackground,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: const Text(
@@ -171,9 +171,9 @@ class ChargersScreen extends StatelessWidget {
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: AppTheme.cardBackground,
                             borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.grey.shade300),
+                            border: Border.all(color: AppTheme.chipBorder),
                           ),
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,
@@ -183,7 +183,7 @@ class ChargersScreen extends StatelessWidget {
                             children: [
                               const Icon(
                                 Icons.calendar_today,
-                                color: Colors.black54,
+                                color: AppTheme.iconSecondary,
                                 size: 18,
                               ),
                               const SizedBox(width: 6),
@@ -199,9 +199,9 @@ class ChargersScreen extends StatelessWidget {
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: AppTheme.cardBackground,
                             borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.grey.shade300),
+                            border: Border.all(color: AppTheme.chipBorder),
                           ),
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,
@@ -211,7 +211,7 @@ class ChargersScreen extends StatelessWidget {
                             children: [
                               const Icon(
                                 Icons.access_time,
-                                color: Colors.black54,
+                                color: AppTheme.iconSecondary,
                                 size: 18,
                               ),
                               const SizedBox(width: 6),
@@ -231,7 +231,7 @@ class ChargersScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: accentGreen,
+                        backgroundColor: AppTheme.accentGreen,
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 18),
                         shape: RoundedRectangleBorder(
