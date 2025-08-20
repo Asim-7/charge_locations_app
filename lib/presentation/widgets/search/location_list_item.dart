@@ -120,6 +120,7 @@ class LocationListItem extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 12),
+
               // Availability icon
               Container(
                 decoration: BoxDecoration(

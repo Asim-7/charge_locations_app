@@ -25,7 +25,7 @@ class ConnectorItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: Container(
               decoration: BoxDecoration(
-                color: statusColor.withAlpha((0.13 * 255).toInt()),
+                color: statusColor,
                 shape: BoxShape.circle,
               ),
               padding: const EdgeInsets.all(10),

@@ -20,7 +20,7 @@ void main() {
           ),
         ),
       );
-      expect(color, ThemeData().colorScheme.tertiary);
+      expect(color, ThemeData().colorScheme.onInverseSurface);
     });
     testWidgets('returns colorScheme.error for CHARGING', (tester) async {
       late Color color;
@@ -34,7 +34,7 @@ void main() {
           ),
         ),
       );
-      expect(color, ThemeData().colorScheme.error);
+      expect(color, ThemeData().colorScheme.inverseSurface);
     });
     testWidgets('returns colorScheme.onSurface for unknown status', (
       tester,

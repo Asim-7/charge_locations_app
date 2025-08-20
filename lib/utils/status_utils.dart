@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 Color getStatusColor(BuildContext context, String status) {
   switch (status) {
     case 'AVAILABLE':
-      return ThemeData().colorScheme.tertiary;
+      return Theme.of(context).colorScheme.onInverseSurface;
     case 'CHARGING':
-      return ThemeData().colorScheme.error;
+      return Theme.of(context).colorScheme.inverseSurface;
     default:
-      return ThemeData().colorScheme.onSurface;
+      return Theme.of(context).colorScheme.onSurface;
   }
 }
