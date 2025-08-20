@@ -16,7 +16,6 @@ List<Widget> getHomeScreens() => <Widget>[
   const Center(
     child: Text(AppStrings.mapScreen, style: TextStyle(fontSize: 24)),
   ),
-  // const ChargersScreen(),
   const Center(
     child: Text(AppStrings.profileScreen, style: TextStyle(fontSize: 24)),
   ),
