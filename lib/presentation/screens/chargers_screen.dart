@@ -3,6 +3,10 @@ import 'package:charge_locations_app/presentation/widgets/detail/connector_list.
 import 'package:charge_locations_app/utils/address_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
+import 'package:charge_locations_app/presentation/widgets/detail/chargers_header.dart';
+import 'package:charge_locations_app/presentation/widgets/detail/chargers_rating_row.dart';
+import 'package:charge_locations_app/presentation/widgets/detail/chargers_distance_time_row.dart';
+import 'package:charge_locations_app/presentation/widgets/detail/chargers_date_time_picker_row.dart';
 
 class ChargersScreen extends StatelessWidget {
   final ChargeLocation location;
@@ -40,119 +44,29 @@ class ChargersScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Back button overlay
-                  CircleAvatar(
-                    backgroundColor: AppTheme.cardBackground,
-                    child: IconButton(
-                      icon: const Icon(Icons.arrow_back, color: AppTheme.icon),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ),
-
-                  const SizedBox(height: 40),
-                  // Title and rating
-                  Text(
-                    titleText,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 21,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    subtitleText,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: AppTheme.subtitleColor,
-                    ),
+                  // Header
+                  ChargersHeader(
+                    titleText: titleText,
+                    subtitleText: subtitleText,
+                    onBack: () => Navigator.pop(context),
                   ),
                   const SizedBox(height: 6),
-                  Row(
-                    children: [
-                      const Icon(Icons.star, color: AppTheme.star, size: 17),
-                      const SizedBox(width: 2),
-                      const Text(
-                        '4.5',
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        ' (56 Reviews)',
-                        style: const TextStyle(color: AppTheme.subtitleColor),
-                      ),
-                      const Spacer(),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: AppTheme.iconButtonBg,
-                          borderRadius: BorderRadius.circular(13),
-                        ),
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.sync_alt,
-                            color: AppTheme.icon,
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: AppTheme.iconButtonBg,
-                          borderRadius: BorderRadius.circular(13),
-                        ),
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.favorite_border,
-                            color: AppTheme.favoriteBorder,
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ],
-                  ),
+
+                  // Rating Row
+                  const ChargersRatingRow(),
                   const SizedBox(height: 8),
-                  // Distance & time
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 4,
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppTheme.chipBackground,
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: const Text(
-                          '1.8 km',
-                          style: TextStyle(fontSize: 13),
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 4,
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppTheme.chipBackground,
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: const Text(
-                          '3 min',
-                          style: TextStyle(fontSize: 13),
-                        ),
-                      ),
-                    ],
-                  ),
+
+                  // Distance & Time Row
+                  const ChargersDistanceTimeRow(),
                   const SizedBox(height: 18),
+
                   // Available Connectors
                   Text(
                     '${location.evses.length} Connector(s)',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
                   ),
                   const SizedBox(height: 10),
 
@@ -166,66 +80,11 @@ class ChargersScreen extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                   const SizedBox(height: 9),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: AppTheme.cardBackground,
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: AppTheme.chipBorder),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 12,
-                          ),
-                          child: Row(
-                            children: [
-                              const Icon(
-                                Icons.calendar_today,
-                                color: AppTheme.iconSecondary,
-                                size: 18,
-                              ),
-                              const SizedBox(width: 6),
-                              const Text(
-                                'Thu, May 30',
-                                style: TextStyle(fontSize: 15),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 14),
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: AppTheme.cardBackground,
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: AppTheme.chipBorder),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 12,
-                          ),
-                          child: Row(
-                            children: [
-                              const Icon(
-                                Icons.access_time,
-                                color: AppTheme.iconSecondary,
-                                size: 18,
-                              ),
-                              const SizedBox(width: 6),
-                              const Text(
-                                '16:30',
-                                style: TextStyle(fontSize: 15),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+
+                  // Date & Time Picker
+                  const ChargersDateTimePickerRow(),
                   const SizedBox(height: 28),
+
                   // Confirm Booking Button
                   SizedBox(
                     width: double.infinity,
