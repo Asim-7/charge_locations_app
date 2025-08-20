@@ -127,7 +127,18 @@ test/
 ---
 
 ## Screenshots
+### Light Mode
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/1_main_light.png" alt="Screenshot 1" width="22%">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/2_search_light.png" alt="Screenshot 2" width="22%">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/3_details_light.png" alt="Screenshot 3" width="22%">
+</div>
 
-*Add screenshots here.*
+### Dark Mode
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/1_main_dark.png" alt="Screenshot 1" width="22%">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/2_search_dark.png" alt="Screenshot 2" width="22%">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/3_details_dark.png" alt="Screenshot 3" width="22%">
+</div>
 
 ---
