@@ -146,35 +146,3 @@ class NearbyStationCard extends StatelessWidget {
     );
   }
 }
-
-// const SizedBox(height: 10),
-//           Column(
-//             crossAxisAlignment: CrossAxisAlignment.end,
-//             children: [
-//               ElevatedButton(
-//                 style: ElevatedButton.styleFrom(
-//                   backgroundColor: Colors.black,
-//                   foregroundColor: Colors.white,
-//                   shape: RoundedRectangleBorder(
-//                     borderRadius: BorderRadius.circular(16),
-//                   ),
-//                 ),
-//                 onPressed: () {},
-//                 child: const Text('Get Direction'),
-//               ),
-//               const SizedBox(height: 10),
-//               Row(
-//                 crossAxisAlignment: CrossAxisAlignment.center,
-//                 children: [
-//                   Icon(Icons.location_on, color: accentGreen, size: 32),
-//                   Container(
-//                     width: 80,
-//                     height: 2,
-//                     color: accentGreen,
-//                     margin: const EdgeInsets.symmetric(horizontal: 8),
-//                   ),
-//                   Icon(Icons.ev_station, color: Colors.green, size: 38),
-//                 ],
-//               ),
-//             ],
-//           ),
