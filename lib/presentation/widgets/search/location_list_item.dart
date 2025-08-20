@@ -81,9 +81,10 @@ class LocationListItem extends StatelessWidget {
                   children: [
                     Text(
                       titleText,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
+                        color: Theme.of(context).colorScheme.onPrimary,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),

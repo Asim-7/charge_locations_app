@@ -67,9 +67,10 @@ class ChargersScreen extends StatelessWidget {
                   // Available Connectors
                   Text(
                     '${location.evses.length} ${AppStrings.connectorsSuffix}',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
+                      color: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -79,9 +80,13 @@ class ChargersScreen extends StatelessWidget {
 
                   const SizedBox(height: 18),
                   // Choose Date & Time
-                  const Text(
+                  Text(
                     AppStrings.chooseDateTime,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
                   ),
                   const SizedBox(height: 9),
 

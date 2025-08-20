@@ -42,7 +42,7 @@ class ChargingPortCard extends StatelessWidget {
             AppStrings.chargingPort,
             style: TextStyle(
               fontSize: 15,
-              color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
           const Spacer(),

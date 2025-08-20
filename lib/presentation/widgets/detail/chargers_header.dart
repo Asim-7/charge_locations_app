@@ -31,13 +31,13 @@ class ChargersHeader extends StatelessWidget {
         ),
         const SizedBox(height: 40),
 
-        // Title and rating
+        // Title
         Text(
           titleText,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 21,
-            color: Colors.black,
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
         ),
         const SizedBox(height: 5),

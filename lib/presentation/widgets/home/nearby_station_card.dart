@@ -44,9 +44,10 @@ class NearbyStationCard extends StatelessWidget {
                 // Station name
                 Text(
                   stationName,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
                 const SizedBox(height: 8),

@@ -30,7 +30,11 @@ class LocationList extends StatelessWidget {
         // City name
         Text(
           locations.isNotEmpty ? '${locations.first.city}' : 'Locations',
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
         ),
         const SizedBox(height: 6),
 
