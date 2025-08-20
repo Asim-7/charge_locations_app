@@ -1,7 +1,6 @@
 import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:charge_locations_app/navigation/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 import '../../widgets/search/location_list_item.dart';
 
 /// Widget to display a list of locations
@@ -12,12 +11,15 @@ class LocationList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (locations.isEmpty) {
-      return const Center(
+      return Center(
         child: Padding(
           padding: EdgeInsets.only(top: 64),
           child: Text(
             AppStrings.noLocationsFound,
-            style: TextStyle(fontSize: 18, color: AppTheme.searchIconSecondary),
+            style: TextStyle(
+              fontSize: 18,
+              color: Theme.of(context).colorScheme.secondary,
+            ),
           ),
         ),
       );
@@ -28,12 +30,16 @@ class LocationList extends StatelessWidget {
         // City name
         Text(
           locations.isNotEmpty ? '${locations.first.city}' : 'Locations',
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
         ),
         const SizedBox(height: 6),
 
         // Divider
-        Divider(thickness: 1, color: AppTheme.searchCardBorder),
+        Divider(thickness: 1, color: Theme.of(context).colorScheme.outline),
 
         // Location list
         Expanded(

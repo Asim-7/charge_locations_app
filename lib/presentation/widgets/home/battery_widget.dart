@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// A widget that displays the battery level of the car.
 class BatteryWidget extends StatelessWidget {
@@ -17,12 +16,12 @@ class BatteryWidget extends StatelessWidget {
       width: 70,
       height: 120,
       decoration: BoxDecoration(
-        color: AppTheme.searchCard,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(
             blurRadius: 8,
-            color: AppTheme.searchCardShadow,
+            color: Theme.of(context).colorScheme.shadow,
             offset: const Offset(2, 2),
           ),
         ],
@@ -38,10 +37,10 @@ class BatteryWidget extends StatelessWidget {
           // Battery percentage text
           Text(
             '$batteryPercent%',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.bold,
-              color: AppTheme.searchIconSecondary,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
         ],

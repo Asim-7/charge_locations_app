@@ -6,7 +6,6 @@ import '../widgets/home/distance_energy_row.dart';
 import '../widgets/home/charging_port_card.dart';
 import '../widgets/home/nearby_station_card.dart';
 import '../../data/providers/main_content_dummy_data.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// Screen displaying the main content for the user's vehicle.
 class MainContentScreen extends StatelessWidget {
@@ -25,7 +24,7 @@ class MainContentScreen extends StatelessWidget {
               carModel: carModel,
               carBrand: carBrand,
               notificationCount: 2,
-              accentGreen: AppTheme.accentGreen,
+              accentGreen: Theme.of(context).primaryColor,
             ),
             const SizedBox(height: 18),
 
@@ -35,7 +34,7 @@ class MainContentScreen extends StatelessWidget {
               children: [
                 BatteryWidget(
                   batteryPercent: batteryPercent,
-                  accentGreen: AppTheme.accentGreen,
+                  accentGreen: Theme.of(context).primaryColor,
                 ),
                 const SizedBox(child: CarImagePlaceholder()),
               ],
@@ -53,7 +52,7 @@ class MainContentScreen extends StatelessWidget {
             // Charging Port Card
             ChargingPortCard(
               chargingPortType: chargingPortType,
-              iconBg: AppTheme.searchIconBg,
+              iconBg: Theme.of(context).colorScheme.onPrimaryContainer,
             ),
             const SizedBox(height: 18),
 
@@ -62,8 +61,8 @@ class MainContentScreen extends StatelessWidget {
               stationName: stationName,
               stationDistanceKm: stationDistanceKm,
               stationTimeMin: stationTimeMin,
-              accentGreen: AppTheme.accentGreen,
-              bgColor: AppTheme.backgroundColor,
+              accentGreen: Theme.of(context).primaryColor,
+              bgColor: Theme.of(context).colorScheme.surface,
             ),
           ],
         ),

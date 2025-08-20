@@ -1,6 +1,5 @@
 import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// A widget that displays the distance and energy information.
 class DistanceEnergyRow extends StatelessWidget {
@@ -23,7 +22,7 @@ class DistanceEnergyRow extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: AppTheme.searchCard,
+              color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(
@@ -32,28 +31,28 @@ class DistanceEnergyRow extends StatelessWidget {
                 // Distance label
                 Text(
                   AppStrings.distance,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
-                    color: AppTheme.searchIconSecondary,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
 
                 // Distance value
                 Text(
                   '$distanceKm km',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: AppTheme.searchIcon,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
 
                 // Distance time left
                 Text(
                   timeLeft,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
-                    color: AppTheme.searchIconSecondary,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
               ],
@@ -67,37 +66,37 @@ class DistanceEnergyRow extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: AppTheme.searchCard,
+              color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Energy label
-                const Text(
+                Text(
                   AppStrings.energy,
                   style: TextStyle(
                     fontSize: 13,
-                    color: AppTheme.searchIconSecondary,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
 
                 // Energy value
                 Text(
                   '$energyKwh kwh',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: AppTheme.searchIcon,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
 
                 // Energy time left
                 Text(
                   AppStrings.singleBattery,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
-                    color: AppTheme.searchIconSecondary,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
               ],

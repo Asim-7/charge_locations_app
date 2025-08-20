@@ -2,7 +2,6 @@ import 'package:charge_locations_app/data/models/charge_location.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/connector_list.dart';
 import 'package:charge_locations_app/utils/address_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_header.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_rating_row.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_distance_time_row.dart';
@@ -23,18 +22,21 @@ class ChargersScreen extends StatelessWidget {
     final subtitleText = addressParts[1];
 
     return Scaffold(
-      backgroundColor: AppTheme.backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Stack(
         children: [
           // Gradient header outside SafeArea
           Container(
             height: 200,
             width: double.infinity,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [AppTheme.gradientStart, AppTheme.gradientEnd],
+                colors: [
+                  Theme.of(context).colorScheme.scrim,
+                  Theme.of(context).colorScheme.surfaceTint,
+                ],
               ),
             ),
           ),
@@ -65,9 +67,10 @@ class ChargersScreen extends StatelessWidget {
                   // Available Connectors
                   Text(
                     '${location.evses.length} ${AppStrings.connectorsSuffix}',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
+                      color: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -77,9 +80,13 @@ class ChargersScreen extends StatelessWidget {
 
                   const SizedBox(height: 18),
                   // Choose Date & Time
-                  const Text(
+                  Text(
                     AppStrings.chooseDateTime,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
                   ),
                   const SizedBox(height: 9),
 
@@ -92,7 +99,7 @@ class ChargersScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AppTheme.accentGreen,
+                        backgroundColor: Theme.of(context).primaryColor,
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 18),
                         shape: RoundedRectangleBorder(

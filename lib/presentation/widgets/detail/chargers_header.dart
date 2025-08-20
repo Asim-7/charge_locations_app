@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// A header widget for the chargers screen, displaying the title and subtitle.
 class ChargersHeader extends StatelessWidget {
@@ -21,21 +20,24 @@ class ChargersHeader extends StatelessWidget {
       children: [
         // Back button overlay
         CircleAvatar(
-          backgroundColor: AppTheme.searchCard,
+          backgroundColor: Theme.of(context).cardColor,
           child: IconButton(
-            icon: const Icon(Icons.arrow_back, color: AppTheme.searchIcon),
+            icon: Icon(
+              Icons.arrow_back,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
             onPressed: onBack,
           ),
         ),
         const SizedBox(height: 40),
 
-        // Title and rating
+        // Title
         Text(
           titleText,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 21,
-            color: Colors.black,
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
         ),
         const SizedBox(height: 5),
@@ -43,9 +45,9 @@ class ChargersHeader extends StatelessWidget {
         // Subtitle
         Text(
           subtitleText,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 14,
-            color: AppTheme.searchIconSecondary,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
       ],

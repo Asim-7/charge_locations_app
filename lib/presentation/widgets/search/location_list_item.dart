@@ -2,7 +2,6 @@ import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 import '../../../data/models/charge_location.dart';
 import '../../../utils/address_utils.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// Widget to display a single location in the search results
 class LocationListItem extends StatelessWidget {
@@ -23,16 +22,18 @@ class LocationListItem extends StatelessWidget {
         totalCount == 0 ? false : availableCount > totalCount / 2;
 
     // Colors & styles
-    final accentGreen = AppTheme.accentGreen;
-    final cardColor = AppTheme.searchCard;
+    final accentGreen = Theme.of(context).primaryColor;
+    final cardColor = Theme.of(context).cardColor;
     final iconBg =
         isMostlyAvailable
-            ? AppTheme.searchListAvailableBg
-            : AppTheme.searchListUnavailableBg;
+            ? Theme.of(context).colorScheme.onInverseSurface
+            : Theme.of(context).colorScheme.inverseSurface;
     final icon = isMostlyAvailable ? Icons.check_circle : Icons.cancel;
     final iconColor =
-        isMostlyAvailable ? AppTheme.accentGreen : AppTheme.searchError;
-    final iconBgLogo = AppTheme.searchIconBg;
+        isMostlyAvailable
+            ? Theme.of(context).primaryColor
+            : Theme.of(context).colorScheme.error;
+    final iconBgLogo = Theme.of(context).colorScheme.onPrimaryContainer;
 
     // Split address using reusable function from utils
     final addressParts = splitAddress(location.address);
@@ -50,7 +51,7 @@ class LocationListItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
               BoxShadow(
-                color: AppTheme.searchCardShadow,
+                color: Theme.of(context).colorScheme.shadow,
                 blurRadius: 10,
                 offset: const Offset(1, 3),
               ),
@@ -66,9 +67,9 @@ class LocationListItem extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 padding: const EdgeInsets.all(10),
-                child: const Icon(
+                child: Icon(
                   Icons.ev_station,
-                  color: AppTheme.searchIcon,
+                  color: Theme.of(context).colorScheme.onPrimary,
                   size: 28,
                 ),
               ),
@@ -80,9 +81,10 @@ class LocationListItem extends StatelessWidget {
                   children: [
                     Text(
                       titleText,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
+                        color: Theme.of(context).colorScheme.onPrimary,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -101,16 +103,16 @@ class LocationListItem extends StatelessWidget {
                           '$availableCount ${AppStrings.available}',
                           style: TextStyle(
                             fontSize: 13,
-                            color: AppTheme.searchIconSecondary,
+                            color: Theme.of(context).colorScheme.secondary,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         const SizedBox(width: 12),
                         Text(
                           '/ $totalCount EVSEs',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 13,
-                            color: AppTheme.searchIconSecondary,
+                            color: Theme.of(context).colorScheme.secondary,
                           ),
                         ),
                       ],
@@ -119,6 +121,7 @@ class LocationListItem extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 12),
+
               // Availability icon
               Container(
                 decoration: BoxDecoration(

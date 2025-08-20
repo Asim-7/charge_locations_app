@@ -1,5 +1,5 @@
+import 'package:charge_locations_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// A row displaying the rating and review count for a charging station.
 class ChargersRatingRow extends StatelessWidget {
@@ -10,7 +10,7 @@ class ChargersRatingRow extends StatelessWidget {
     return Row(
       children: [
         // Rating Icon
-        const Icon(Icons.star, color: AppTheme.star, size: 17),
+        const Icon(Icons.star, color: AppColors.star, size: 17),
         const SizedBox(width: 2),
 
         // Rating Text
@@ -20,20 +20,23 @@ class ChargersRatingRow extends StatelessWidget {
         ),
 
         // Review Count
-        const Text(
+        Text(
           ' (56 Reviews)',
-          style: TextStyle(color: AppTheme.searchIconSecondary),
+          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
         ),
         const Spacer(),
 
         // Sync Button
         Container(
           decoration: BoxDecoration(
-            color: AppTheme.searchCardShadow,
+            color: Theme.of(context).colorScheme.shadow,
             borderRadius: BorderRadius.circular(13),
           ),
           child: IconButton(
-            icon: const Icon(Icons.sync_alt, color: AppTheme.searchIcon),
+            icon: Icon(
+              Icons.sync_alt,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
             onPressed: () {},
           ),
         ),
@@ -42,11 +45,14 @@ class ChargersRatingRow extends StatelessWidget {
         // Favorite Button
         Container(
           decoration: BoxDecoration(
-            color: AppTheme.searchCardShadow,
+            color: Theme.of(context).colorScheme.shadow,
             borderRadius: BorderRadius.circular(13),
           ),
           child: IconButton(
-            icon: const Icon(Icons.favorite_border, color: AppTheme.searchIcon),
+            icon: Icon(
+              Icons.favorite_border,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
             onPressed: () {},
           ),
         ),

@@ -1,5 +1,4 @@
 import 'package:charge_locations_app/constants/app_strings.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 /// A card widget that displays information about a nearby charging station.
@@ -23,7 +22,7 @@ class NearbyStationCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppTheme.searchCard,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(18),
       ),
       child: Row(
@@ -45,9 +44,10 @@ class NearbyStationCard extends StatelessWidget {
                 // Station name
                 Text(
                   stationName,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -104,8 +104,8 @@ class NearbyStationCard extends StatelessWidget {
                 // Get Direction button
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.searchIcon,
-                    foregroundColor: AppTheme.searchCard,
+                    backgroundColor: Theme.of(context).colorScheme.onPrimary,
+                    foregroundColor: Theme.of(context).cardColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -123,7 +123,7 @@ class NearbyStationCard extends StatelessWidget {
                     // Start location
                     Icon(
                       Icons.location_on,
-                      color: AppTheme.accentGreen,
+                      color: Theme.of(context).primaryColor,
                       size: 25,
                     ),
 
@@ -131,14 +131,14 @@ class NearbyStationCard extends StatelessWidget {
                     Container(
                       width: 80,
                       height: 2,
-                      color: AppTheme.accentGreen,
+                      color: Theme.of(context).primaryColor,
                       margin: const EdgeInsets.symmetric(horizontal: 8),
                     ),
 
                     // End location
                     Icon(
                       Icons.ev_station,
-                      color: AppTheme.statusAvailable,
+                      color: Theme.of(context).colorScheme.tertiary,
                       size: 25,
                     ),
                   ],

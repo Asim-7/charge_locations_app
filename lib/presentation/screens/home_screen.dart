@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../widgets/home/home_bottom_nav_bar.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 import '../../data/providers/home_screens_provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:charge_locations_app/presentation/blocs/navigation/bottom_nav_cubit.dart';
@@ -18,11 +17,11 @@ class HomeScreen extends StatelessWidget {
       child: BlocBuilder<BottomNavCubit, int>(
         builder: (context, selectedIndex) {
           return Scaffold(
-            backgroundColor: AppTheme.backgroundColor,
+            backgroundColor: Theme.of(context).colorScheme.surface,
             // using IndexedStack to preserve state
             body: IndexedStack(index: selectedIndex, children: _screens),
             bottomNavigationBar: HomeBottomNavBar(
-              accentGreen: AppTheme.accentGreen,
+              accentGreen: Theme.of(context).primaryColor,
               selectedIndex: selectedIndex,
               onItemTapped:
                   (index) =>

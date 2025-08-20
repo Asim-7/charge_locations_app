@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// A header widget that displays the car's information.
 class CarInfoHeader extends StatelessWidget {
@@ -27,19 +26,19 @@ class CarInfoHeader extends StatelessWidget {
             // The car model text.
             Text(
               carModel,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: AppTheme.searchIcon,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
 
             // The car brand text.
             Text(
               carBrand,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
-                color: AppTheme.searchIconSecondary,
+                color: Theme.of(context).colorScheme.secondary,
               ),
             ),
           ],
@@ -50,10 +49,10 @@ class CarInfoHeader extends StatelessWidget {
           children: [
             // Notification icon button
             IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.notifications_none_outlined,
                 size: 28,
-                color: AppTheme.searchIcon,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
               onPressed: () {},
             ),
@@ -71,8 +70,8 @@ class CarInfoHeader extends StatelessWidget {
                   ),
                   child: Text(
                     '$notificationCount',
-                    style: const TextStyle(
-                      color: AppTheme.searchCard,
+                    style: TextStyle(
+                      color: Theme.of(context).cardColor,
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),

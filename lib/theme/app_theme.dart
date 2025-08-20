@@ -1,33 +1,161 @@
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_colors.dart';
 
 class AppTheme {
-  // Search widgets
-  static const Color searchCard = Colors.white;
-  static const Color searchCardBorder = Color(
-    0xFFE0E0E0,
-  ); // Colors.grey.shade300
-  static const Color searchCardShadow = Color(
-    0xFFF5F5F5,
-  ); // Colors.grey.shade200
-  static const Color searchIcon = Colors.black;
-  static const Color searchIconSecondary = Colors.grey;
-  static const Color accentGreen = Color(0xFF6CF05A);
-  static const Color searchError = Colors.red;
-  static const Color searchIconBg = Color(0xFFE8F5E9);
-  static const Color searchListAvailableBg = Color(
-    0x216CF05A,
-  ); // accentGreen with 13% alpha
-  static const Color searchListUnavailableBg = Color(
-    0x21FF0000,
-  ); // red with 13% alpha
-  // Home widgets
-  static const Color statusAvailable = Colors.green;
-  static const Color backgroundColor = Color(0xFFF4F6F8);
-  static const Color gradientStart = Color(0xFFE0F7FA); // Light cyan
-  static const Color gradientEnd = Color(0x00E0F7FA); // Transparent fade
+  // Light ThemeData
+  static final ThemeData lightTheme = ThemeData(
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: AppColors.backgroundColor,
+    primaryColor: AppColors.accentGreen,
+    colorScheme: ColorScheme(
+      brightness: Brightness.light,
+      primary: AppColors.accentGreen,
+      onPrimary: AppColors.searchIcon,
+      onPrimaryContainer: AppColors.searchIconBg,
+      onPrimaryFixed: AppColors.iconSecondary,
+      secondary: AppColors.searchIconSecondary,
+      onSecondary: AppColors.searchIcon,
+      error: AppColors.searchError,
+      onError: AppColors.searchIcon,
+      surface: AppColors.backgroundColor,
+      onSurface: AppColors.searchIcon,
+      tertiary: AppColors.statusAvailable,
+      onTertiary: AppColors.searchIcon,
+      outline: AppColors.searchCardBorder,
+      outlineVariant: AppColors.searchCardShadow,
+      shadow: AppColors.searchCardShadow,
+      inverseSurface: AppColors.searchListUnavailableBg,
+      onInverseSurface: AppColors.searchListAvailableBg,
+      scrim: AppColors.gradientStart,
+      surfaceTint: AppColors.gradientEnd,
+    ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.accentGreen,
+      foregroundColor: Colors.white,
+      elevation: 0,
+      iconTheme: const IconThemeData(color: Colors.white),
+      titleTextStyle: const TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    cardColor: AppColors.searchCard,
+    dividerColor: AppColors.searchCardBorder,
+    iconTheme: const IconThemeData(color: AppColors.searchIcon, size: 24),
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(fontSize: 16, color: AppColors.searchIcon),
+      bodyMedium: TextStyle(fontSize: 14, color: AppColors.searchIconSecondary),
+      titleLarge: TextStyle(
+        fontSize: 21,
+        fontWeight: FontWeight.bold,
+        color: AppColors.searchIcon,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 17,
+        fontWeight: FontWeight.bold,
+        color: AppColors.searchIcon,
+      ),
+    ),
+    chipTheme: ChipThemeData(
+      backgroundColor: AppColors.searchCard,
+      disabledColor: AppColors.searchCard,
+      selectedColor: AppColors.accentGreen.withValues(alpha: 0.15),
+      secondarySelectedColor: AppColors.accentGreen,
+      labelStyle: const TextStyle(color: AppColors.searchIcon),
+      secondaryLabelStyle: const TextStyle(color: AppColors.searchIcon),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+    ),
+    buttonTheme: const ButtonThemeData(
+      buttonColor: AppColors.searchIcon,
+      textTheme: ButtonTextTheme.primary,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(22)),
+      ),
+    ),
+    shadowColor: AppColors.searchCardShadow,
+    highlightColor: AppColors.gradientStart,
+    splashColor: AppColors.gradientEnd,
+  );
 
-  // Unified color references
-  static const Color star = Colors.amber;
-  static const Color iconSecondary = Colors.black54;
-  static const Color favoriteBorder = searchIcon;
+  // Dark ThemeData
+  static final ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: AppColors.darkBackgroundColor,
+    primaryColor: AppColors.darkAccentGreen,
+    colorScheme: ColorScheme(
+      brightness: Brightness.dark,
+      primary: AppColors.darkAccentGreen,
+      onPrimary: AppColors.darkSearchIcon,
+      onPrimaryContainer: AppColors.darkSearchIconBg,
+      onPrimaryFixed: AppColors.darkIconSecondary,
+      secondary: AppColors.darkSearchIconSecondary,
+      onSecondary: AppColors.darkSearchIcon,
+      error: AppColors.darkSearchError,
+      onError: AppColors.darkSearchIcon,
+      surface: AppColors.darkBackgroundColor,
+      onSurface: AppColors.darkSearchIcon,
+      tertiary: AppColors.darkStatusAvailable,
+      onTertiary: AppColors.darkSearchIcon,
+      outline: AppColors.darkSearchCardBorder,
+      outlineVariant: AppColors.darkSearchCardShadow,
+      shadow: AppColors.darkSearchCardShadow,
+      inverseSurface: AppColors.darkSearchListUnavailableBg,
+      onInverseSurface: AppColors.darkSearchListAvailableBg,
+      scrim: AppColors.darkGradientStart,
+      surfaceTint: AppColors.darkGradientEnd,
+    ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.darkAccentGreen,
+      foregroundColor: Colors.black,
+      elevation: 0,
+      iconTheme: const IconThemeData(color: Colors.black),
+      titleTextStyle: const TextStyle(
+        color: Colors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    cardColor: AppColors.darkSearchCard,
+    dividerColor: AppColors.darkSearchCardBorder,
+    iconTheme: const IconThemeData(color: AppColors.darkSearchIcon, size: 24),
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(fontSize: 16, color: AppColors.darkSearchIcon),
+      bodyMedium: TextStyle(
+        fontSize: 14,
+        color: AppColors.darkSearchIconSecondary,
+      ),
+      titleLarge: TextStyle(
+        fontSize: 21,
+        fontWeight: FontWeight.bold,
+        color: AppColors.darkSearchIcon,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 17,
+        fontWeight: FontWeight.bold,
+        color: AppColors.darkSearchIcon,
+      ),
+    ),
+    chipTheme: ChipThemeData(
+      backgroundColor: AppColors.darkSearchCard,
+      disabledColor: AppColors.darkSearchCard,
+      selectedColor: AppColors.darkAccentGreen.withValues(alpha: 0.15),
+      secondarySelectedColor: AppColors.darkAccentGreen,
+      labelStyle: const TextStyle(color: AppColors.darkSearchIcon),
+      secondaryLabelStyle: const TextStyle(color: AppColors.darkSearchIcon),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+    ),
+    buttonTheme: const ButtonThemeData(
+      buttonColor: AppColors.darkSearchIcon,
+      textTheme: ButtonTextTheme.primary,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(22)),
+      ),
+    ),
+    shadowColor: AppColors.darkSearchCardShadow,
+    highlightColor: AppColors.darkGradientStart,
+    splashColor: AppColors.darkGradientEnd,
+  );
 }
