@@ -17,4 +17,5 @@ class AppTheme {
   static const Color iconSecondary = Colors.black54;
   static const Color favoriteBorder = icon;
   static const Color iconBg = Color(0xFFE8F5E9); // Used in main_content_screen
+  static const Color textPrimary = Colors.black;
 }

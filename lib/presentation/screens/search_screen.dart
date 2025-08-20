@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_event.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_state.dart';
 import 'package:charge_locations_app/presentation/widgets/search/location_search_bar_v2.dart';
@@ -50,10 +51,8 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const accentGreen = Color(0xFF6CF05A);
-
     return Scaffold(
-      backgroundColor: const Color(0xFFF4F6F8),
+      backgroundColor: AppTheme.backgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
@@ -66,7 +65,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: AppTheme.textPrimary,
                 ),
               ),
 
@@ -92,11 +91,15 @@ class _SearchScreenState extends State<SearchScreen> {
               // Current location
               Row(
                 children: [
-                  Icon(Icons.my_location, color: accentGreen, size: 23),
+                  Icon(
+                    Icons.my_location,
+                    color: AppTheme.accentGreen,
+                    size: 23,
+                  ),
                   const SizedBox(width: 8),
                   const Text(
                     'Current location',
-                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    style: TextStyle(fontSize: 16, color: AppTheme.textPrimary),
                   ),
                 ],
               ),
