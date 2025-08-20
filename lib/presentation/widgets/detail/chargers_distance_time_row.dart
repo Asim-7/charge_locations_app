@@ -13,7 +13,7 @@ class ChargersDistanceTimeRow extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            color: AppTheme.chipBackground,
+            color: AppTheme.searchCard,
             borderRadius: BorderRadius.circular(6),
           ),
           child: const Text('1.8 km', style: TextStyle(fontSize: 13)),
@@ -24,7 +24,7 @@ class ChargersDistanceTimeRow extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            color: AppTheme.chipBackground,
+            color: AppTheme.searchCard,
             borderRadius: BorderRadius.circular(6),
           ),
           child: const Text('3 min', style: TextStyle(fontSize: 13)),

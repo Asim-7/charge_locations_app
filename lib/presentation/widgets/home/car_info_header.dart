@@ -30,7 +30,7 @@ class CarInfoHeader extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: AppTheme.textPrimary,
+                color: AppTheme.searchIcon,
               ),
             ),
 
@@ -39,7 +39,7 @@ class CarInfoHeader extends StatelessWidget {
               carBrand,
               style: const TextStyle(
                 fontSize: 14,
-                color: AppTheme.textSecondary,
+                color: AppTheme.searchIconSecondary,
               ),
             ),
           ],
@@ -53,7 +53,7 @@ class CarInfoHeader extends StatelessWidget {
               icon: const Icon(
                 Icons.notifications_none_outlined,
                 size: 28,
-                color: AppTheme.icon,
+                color: AppTheme.searchIcon,
               ),
               onPressed: () {},
             ),
@@ -72,7 +72,7 @@ class CarInfoHeader extends StatelessWidget {
                   child: Text(
                     '$notificationCount',
                     style: const TextStyle(
-                      color: AppTheme.cardBackground,
+                      color: AppTheme.searchCard,
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),

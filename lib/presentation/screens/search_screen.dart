@@ -66,7 +66,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: AppTheme.textPrimary,
+                  color: AppTheme.searchIcon,
                 ),
               ),
 
@@ -100,7 +100,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   const SizedBox(width: 8),
                   const Text(
                     AppStrings.currentLocation,
-                    style: TextStyle(fontSize: 16, color: AppTheme.textPrimary),
+                    style: TextStyle(fontSize: 16, color: AppTheme.searchIcon),
                   ),
                 ],
               ),

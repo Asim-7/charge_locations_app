@@ -17,7 +17,7 @@ class ChargingPortCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppTheme.cardBackground,
+        color: AppTheme.searchCard,
         borderRadius: BorderRadius.circular(18),
       ),
       // A row displaying the charging port icon and type.
@@ -32,7 +32,7 @@ class ChargingPortCard extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: const Icon(
               Icons.power_outlined,
-              color: AppTheme.icon,
+              color: AppTheme.searchIcon,
               size: 28,
             ),
           ),
@@ -41,7 +41,7 @@ class ChargingPortCard extends StatelessWidget {
           // Charging port type text
           const Text(
             AppStrings.chargingPort,
-            style: TextStyle(fontSize: 15, color: AppTheme.textSecondary),
+            style: TextStyle(fontSize: 15, color: AppTheme.searchIconSecondary),
           ),
           const Spacer(),
 

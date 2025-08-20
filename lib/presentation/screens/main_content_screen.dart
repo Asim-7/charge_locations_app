@@ -53,7 +53,7 @@ class MainContentScreen extends StatelessWidget {
             // Charging Port Card
             ChargingPortCard(
               chargingPortType: chargingPortType,
-              iconBg: AppTheme.iconBg,
+              iconBg: AppTheme.searchIconBg,
             ),
             const SizedBox(height: 18),
 

@@ -23,7 +23,7 @@ class NearbyStationCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppTheme.cardBackground,
+        color: AppTheme.searchCard,
         borderRadius: BorderRadius.circular(18),
       ),
       child: Row(
@@ -104,8 +104,8 @@ class NearbyStationCard extends StatelessWidget {
                 // Get Direction button
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.icon,
-                    foregroundColor: AppTheme.cardBackground,
+                    backgroundColor: AppTheme.searchIcon,
+                    foregroundColor: AppTheme.searchCard,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -123,7 +123,7 @@ class NearbyStationCard extends StatelessWidget {
                     // Start location
                     Icon(
                       Icons.location_on,
-                      color: AppTheme.routeStart,
+                      color: AppTheme.accentGreen,
                       size: 25,
                     ),
 
@@ -131,12 +131,16 @@ class NearbyStationCard extends StatelessWidget {
                     Container(
                       width: 80,
                       height: 2,
-                      color: AppTheme.routeLine,
+                      color: AppTheme.accentGreen,
                       margin: const EdgeInsets.symmetric(horizontal: 8),
                     ),
 
                     // End location
-                    Icon(Icons.ev_station, color: AppTheme.routeEnd, size: 25),
+                    Icon(
+                      Icons.ev_station,
+                      color: AppTheme.statusAvailable,
+                      size: 25,
+                    ),
                   ],
                 ),
               ],

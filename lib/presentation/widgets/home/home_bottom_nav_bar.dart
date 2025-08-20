@@ -24,7 +24,7 @@ class HomeBottomNavBar extends StatelessWidget {
     ];
     return Container(
       decoration: BoxDecoration(
-        color: AppTheme.navBarBg,
+        color: AppTheme.searchCard,
         borderRadius: BorderRadius.circular(26),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -39,8 +39,8 @@ class HomeBottomNavBar extends StatelessWidget {
                       item.icon,
                       color:
                           selectedIndex == item.index
-                              ? AppTheme.navBarSelected
-                              : AppTheme.navBarUnselected,
+                              ? AppTheme.accentGreen
+                              : AppTheme.searchIconSecondary,
                       size: 28,
                     ),
                     onPressed: () => onItemTapped(item.index),

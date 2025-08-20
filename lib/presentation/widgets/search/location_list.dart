@@ -33,7 +33,7 @@ class LocationList extends StatelessWidget {
         const SizedBox(height: 6),
 
         // Divider
-        Divider(thickness: 1, color: AppTheme.searchDivider),
+        Divider(thickness: 1, color: AppTheme.searchCardBorder),
 
         // Location list
         Expanded(

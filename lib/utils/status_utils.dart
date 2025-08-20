@@ -7,8 +7,8 @@ Color getStatusColor(String status) {
     case 'AVAILABLE':
       return AppTheme.statusAvailable;
     case 'CHARGING':
-      return AppTheme.statusCharging;
+      return AppTheme.searchError;
     default:
-      return AppTheme.statusDefault;
+      return AppTheme.searchIconSecondary;
   }
 }

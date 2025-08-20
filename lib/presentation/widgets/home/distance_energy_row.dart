@@ -23,7 +23,7 @@ class DistanceEnergyRow extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: AppTheme.cardBackground,
+              color: AppTheme.searchCard,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(
@@ -34,7 +34,7 @@ class DistanceEnergyRow extends StatelessWidget {
                   AppStrings.distance,
                   style: const TextStyle(
                     fontSize: 13,
-                    color: AppTheme.textSecondary,
+                    color: AppTheme.searchIconSecondary,
                   ),
                 ),
 
@@ -44,7 +44,7 @@ class DistanceEnergyRow extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: AppTheme.textPrimary,
+                    color: AppTheme.searchIcon,
                   ),
                 ),
 
@@ -53,7 +53,7 @@ class DistanceEnergyRow extends StatelessWidget {
                   timeLeft,
                   style: const TextStyle(
                     fontSize: 13,
-                    color: AppTheme.textSecondary,
+                    color: AppTheme.searchIconSecondary,
                   ),
                 ),
               ],
@@ -67,7 +67,7 @@ class DistanceEnergyRow extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: AppTheme.cardBackground,
+              color: AppTheme.searchCard,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(
@@ -76,7 +76,10 @@ class DistanceEnergyRow extends StatelessWidget {
                 // Energy label
                 const Text(
                   AppStrings.energy,
-                  style: TextStyle(fontSize: 13, color: AppTheme.textSecondary),
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: AppTheme.searchIconSecondary,
+                  ),
                 ),
 
                 // Energy value
@@ -85,7 +88,7 @@ class DistanceEnergyRow extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: AppTheme.textPrimary,
+                    color: AppTheme.searchIcon,
                   ),
                 ),
 
@@ -94,7 +97,7 @@ class DistanceEnergyRow extends StatelessWidget {
                   AppStrings.singleBattery,
                   style: const TextStyle(
                     fontSize: 13,
-                    color: AppTheme.textSecondary,
+                    color: AppTheme.searchIconSecondary,
                   ),
                 ),
               ],

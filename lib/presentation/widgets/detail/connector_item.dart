@@ -16,9 +16,9 @@ class ConnectorItem extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: Container(
         decoration: BoxDecoration(
-          color: AppTheme.cardBackground,
+          color: AppTheme.searchCard,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: AppTheme.border),
+          border: Border.all(color: AppTheme.searchCardBorder),
         ),
         child: ListTile(
           // Leading icon with status color
@@ -32,7 +32,7 @@ class ConnectorItem extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: const Icon(
                 Icons.electric_car,
-                color: AppTheme.icon,
+                color: AppTheme.searchIcon,
                 size: 28,
               ),
             ),
@@ -56,7 +56,7 @@ class ConnectorItem extends StatelessWidget {
                   const Icon(
                     Icons.attach_money,
                     size: 17,
-                    color: AppTheme.icon,
+                    color: AppTheme.searchIcon,
                   ),
                   const SizedBox(width: 2),
                   Text('\$1.00/ kWh', style: const TextStyle(fontSize: 13)),
@@ -79,7 +79,7 @@ class ConnectorItem extends StatelessWidget {
           ),
           trailing: const Icon(
             Icons.arrow_forward_ios,
-            color: AppTheme.trailingIcon,
+            color: AppTheme.searchIconSecondary,
             size: 18,
           ),
           onTap: () {},

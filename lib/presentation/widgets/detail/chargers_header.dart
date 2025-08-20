@@ -21,9 +21,9 @@ class ChargersHeader extends StatelessWidget {
       children: [
         // Back button overlay
         CircleAvatar(
-          backgroundColor: AppTheme.cardBackground,
+          backgroundColor: AppTheme.searchCard,
           child: IconButton(
-            icon: const Icon(Icons.arrow_back, color: AppTheme.icon),
+            icon: const Icon(Icons.arrow_back, color: AppTheme.searchIcon),
             onPressed: onBack,
           ),
         ),
@@ -43,7 +43,10 @@ class ChargersHeader extends StatelessWidget {
         // Subtitle
         Text(
           subtitleText,
-          style: const TextStyle(fontSize: 14, color: AppTheme.subtitleColor),
+          style: const TextStyle(
+            fontSize: 14,
+            color: AppTheme.searchIconSecondary,
+          ),
         ),
       ],
     );

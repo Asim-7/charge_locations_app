@@ -22,18 +22,18 @@ class ChargersRatingRow extends StatelessWidget {
         // Review Count
         const Text(
           ' (56 Reviews)',
-          style: TextStyle(color: AppTheme.subtitleColor),
+          style: TextStyle(color: AppTheme.searchIconSecondary),
         ),
         const Spacer(),
 
         // Sync Button
         Container(
           decoration: BoxDecoration(
-            color: AppTheme.iconButtonBg,
+            color: AppTheme.searchCardShadow,
             borderRadius: BorderRadius.circular(13),
           ),
           child: IconButton(
-            icon: const Icon(Icons.sync_alt, color: AppTheme.icon),
+            icon: const Icon(Icons.sync_alt, color: AppTheme.searchIcon),
             onPressed: () {},
           ),
         ),
@@ -42,14 +42,11 @@ class ChargersRatingRow extends StatelessWidget {
         // Favorite Button
         Container(
           decoration: BoxDecoration(
-            color: AppTheme.iconButtonBg,
+            color: AppTheme.searchCardShadow,
             borderRadius: BorderRadius.circular(13),
           ),
           child: IconButton(
-            icon: const Icon(
-              Icons.favorite_border,
-              color: AppTheme.favoriteBorder,
-            ),
+            icon: const Icon(Icons.favorite_border, color: AppTheme.searchIcon),
             onPressed: () {},
           ),
         ),

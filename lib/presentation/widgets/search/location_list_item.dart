@@ -23,7 +23,7 @@ class LocationListItem extends StatelessWidget {
         totalCount == 0 ? false : availableCount > totalCount / 2;
 
     // Colors & styles
-    final accentGreen = AppTheme.searchAvailable;
+    final accentGreen = AppTheme.accentGreen;
     final cardColor = AppTheme.searchCard;
     final iconBg =
         isMostlyAvailable
@@ -31,9 +31,7 @@ class LocationListItem extends StatelessWidget {
             : AppTheme.searchListUnavailableBg;
     final icon = isMostlyAvailable ? Icons.check_circle : Icons.cancel;
     final iconColor =
-        isMostlyAvailable
-            ? AppTheme.searchAvailable
-            : AppTheme.searchUnavailable;
+        isMostlyAvailable ? AppTheme.accentGreen : AppTheme.searchError;
     final iconBgLogo = AppTheme.searchIconBg;
 
     // Split address using reusable function from utils
@@ -52,7 +50,7 @@ class LocationListItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
               BoxShadow(
-                color: AppTheme.searchListShadow,
+                color: AppTheme.searchCardShadow,
                 blurRadius: 10,
                 offset: const Offset(1, 3),
               ),

@@ -8,11 +8,11 @@ void main() {
       expect(getStatusColor('AVAILABLE'), AppTheme.statusAvailable);
     });
     test('returns statusCharging for CHARGING', () {
-      expect(getStatusColor('CHARGING'), AppTheme.statusCharging);
+      expect(getStatusColor('CHARGING'), AppTheme.searchError);
     });
     test('returns statusDefault for unknown status', () {
-      expect(getStatusColor('UNKNOWN'), AppTheme.statusDefault);
-      expect(getStatusColor(''), AppTheme.statusDefault);
+      expect(getStatusColor('UNKNOWN'), AppTheme.searchIconSecondary);
+      expect(getStatusColor(''), AppTheme.searchIconSecondary);
     });
   });
 }

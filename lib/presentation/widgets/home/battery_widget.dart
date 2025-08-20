@@ -17,12 +17,12 @@ class BatteryWidget extends StatelessWidget {
       width: 70,
       height: 120,
       decoration: BoxDecoration(
-        color: AppTheme.cardBackground,
+        color: AppTheme.searchCard,
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(
             blurRadius: 8,
-            color: AppTheme.cardShadow,
+            color: AppTheme.searchCardShadow,
             offset: const Offset(2, 2),
           ),
         ],
@@ -41,7 +41,7 @@ class BatteryWidget extends StatelessWidget {
             style: const TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.bold,
-              color: AppTheme.textSecondary,
+              color: AppTheme.searchIconSecondary,
             ),
           ),
         ],
