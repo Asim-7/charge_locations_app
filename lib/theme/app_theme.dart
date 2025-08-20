@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
+  static const Color statusAvailable = Colors.green;
+  static const Color statusCharging = Colors.red;
+  static const Color statusDefault = Colors.grey;
+  static const Color border = Color(0xFFE0E0E0); // Colors.grey.shade300
+  static const Color trailingIcon = Colors.grey;
   static const Color accentGreen = Color(0xFF6CF05A);
   static const Color subtitleColor = Colors.grey;
   static const Color backgroundColor = Color(0xFFF4F6F8);
