@@ -23,77 +23,97 @@ class NearbyStationCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(18),
       ),
-      child: Column(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Nearby Station',
-            style: TextStyle(fontSize: 15, color: Colors.grey),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            stationName,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          ),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: bgColor,
-                  borderRadius: BorderRadius.circular(6),
+          // Left column: Station info
+          Expanded(
+            flex: 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Nearby Station',
+                  style: TextStyle(fontSize: 15, color: Colors.grey),
                 ),
-                child: Text(
-                  '$stationDistanceKm km',
-                  style: const TextStyle(fontSize: 13),
-                ),
-              ),
-              const SizedBox(width: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: bgColor,
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: Text(
-                  '$stationTimeMin min',
-                  style: const TextStyle(fontSize: 13),
-                ),
-              ),
-              const Spacer(),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                const SizedBox(height: 5),
+                Text(
+                  stationName,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
                   ),
                 ),
-                onPressed: () {},
-                child: const Text('Get Direction'),
-              ),
-            ],
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: bgColor,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        '$stationDistanceKm km',
+                        style: const TextStyle(fontSize: 13),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: bgColor,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        '$stationTimeMin min',
+                        style: const TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-          const SizedBox(height: 10),
-          SizedBox(
-            height: 54,
-            child: Stack(
+          const SizedBox(width: 16),
+          // Right column: Button and route row
+          Expanded(
+            flex: 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Positioned(
-                  left: 0,
-                  top: 18,
-                  child: Icon(Icons.location_on, color: accentGreen, size: 32),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Text('Get Direction'),
                 ),
-                Positioned(
-                  left: 30,
-                  top: 27,
-                  child: Container(width: 80, height: 2, color: accentGreen),
-                ),
-                Positioned(
-                  left: 118,
-                  top: 12,
-                  child: Icon(Icons.ev_station, color: Colors.green, size: 38),
+                const SizedBox(height: 10),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.location_on, color: accentGreen, size: 25),
+                    Container(
+                      width: 80,
+                      height: 2,
+                      color: accentGreen,
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
+                    ),
+                    Icon(Icons.ev_station, color: Colors.green, size: 25),
+                  ],
                 ),
               ],
             ),
@@ -103,3 +123,35 @@ class NearbyStationCard extends StatelessWidget {
     );
   }
 }
+
+// const SizedBox(height: 10),
+//           Column(
+//             crossAxisAlignment: CrossAxisAlignment.end,
+//             children: [
+//               ElevatedButton(
+//                 style: ElevatedButton.styleFrom(
+//                   backgroundColor: Colors.black,
+//                   foregroundColor: Colors.white,
+//                   shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(16),
+//                   ),
+//                 ),
+//                 onPressed: () {},
+//                 child: const Text('Get Direction'),
+//               ),
+//               const SizedBox(height: 10),
+//               Row(
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+//                 children: [
+//                   Icon(Icons.location_on, color: accentGreen, size: 32),
+//                   Container(
+//                     width: 80,
+//                     height: 2,
+//                     color: accentGreen,
+//                     margin: const EdgeInsets.symmetric(horizontal: 8),
+//                   ),
+//                   Icon(Icons.ev_station, color: Colors.green, size: 38),
+//                 ],
+//               ),
+//             ],
+//           ),

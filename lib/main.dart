@@ -1,6 +1,6 @@
 import 'package:charge_locations_app/di/service_locator.dart';
 import 'package:charge_locations_app/navigation/app_router.dart';
-import 'package:charge_locations_app/presentation/theme/app_theme.dart';
+import 'package:charge_locations_app/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,12 +15,10 @@ class ChargeLocationsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Charge Locations',
-      theme: AppTheme.lightTheme, // Light theme
-      darkTheme: AppTheme.darkTheme, // Dark theme
-      themeMode: ThemeMode.system, // Auto switch based on device setting
+      theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,
-      initialRoute: AppRouter.searchScreenRoute,
+      home: const HomeScreen(),
     );
   }
 }
