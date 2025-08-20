@@ -1,91 +1,120 @@
+
 # Charge Locations App
 
-A Flutter mobile app that lets users search for EV charge locations by city, view a list of locations with availability status, and see detailed information about each charge location.
+A modern Flutter app to search for EV charge locations by city, view real-time availability, and see detailed information for each location. Built with Clean Architecture, BLoC, and a fully modular, themeable, and localizable codebase.
 
-## Architectural Pattern
+---
 
-**Architecture:** I chose the Clean Architecture approach, separating the app into layers: Presentation, Domain, and Data. This ensures testability, scalability, and maintainability. The Presentation layer uses BLoC for state management, Domain layer contains business logic, and Data layer handles API integration and parsing.
+## Key Features
+
+- **Search by City:** Find EV charging stations in any city with instant results.
+- **Availability Status:** See real-time connector availability with color-coded icons and counts.
+- **Detailed Station View:** View address, reviews, connector types, and book a charging slot.
+- **Persistent Navigation:** Bottom navigation with stateful, modular screens.
+- **Modern UI:** Card-based layouts, gradients, and fade effects for a professional look.
+- **Localization Ready:** All user-facing strings are extracted for easy translation.
+- **Centralized Theming:** All colors and styles are managed in `AppTheme` for consistency.
+- **Clean Architecture:** Strict separation of Presentation, Domain, and Data layers for maintainability.
+
+---
+
+## Architecture & State Management
+
+- **Clean Architecture:**
+  - `lib/data/`: API, models, and repositories
+  - `lib/domain/`: Use cases and business logic
+  - `lib/presentation/`: UI, BLoC, widgets, and screens
+- **BLoC Pattern:**
+  - Predictable, testable state management
+  - All business logic and async flows handled via BLoC
+- **Dependency Injection:**
+  - All dependencies managed via a service locator
+
 
 **Why Clean Architecture?**  
 - Makes code easy to test and extend  
 - Separation of concerns: UI, business logic, and data access are decoupled  
 - Facilitates robust error handling and future platform expansion
 
-## State Management Choice
-
-**Chosen:** BLoC (Business Logic Components) state management
-**Justification:**  
+**Why Bloc State Management:**  
 - Aligns with GreenFlux's current practices  
 - Offers explicit event/state handling for robust, predictable state management  
 - Scales well for larger, more complex applications  
 - Well-supported and documented in Flutter ecosystem
 
-## Project Structure
+---
+
+## Project Structure (2025)
 
 ```
 lib/
+  constants/
+    app_strings.dart
   data/
     models/
-      charge_location.dart
-      evse.dart
-    repositories/
-      charge_location_repository.dart
     providers/
-      api_provider.dart
+    repositories/
   domain/
     usecases/
-      fetch_locations.dart
-      fetch_location_detail.dart
   presentation/
     blocs/
-      location_search_bloc.dart
-      location_detail_bloc.dart
     screens/
-      search_screen.dart
-      detail_screen.dart
     widgets/
-      location_list_item.dart
-      evse_detail_tile.dart
+      home/
+      search/
+      detail/
+    ...
+  theme/
+    app_theme.dart
+  utils/
+    address_utils.dart
+    status_utils.dart
 main.dart
 test/
-  data/
-    models/
-      charge_location_test.dart
-  presentation/
-    blocs/
-      location_search_bloc_test.dart
+  ...
 ```
+
+---
+
+## Theming & Localization
+
+- **AppTheme:** All colors, shadows, and style constants are defined in `theme/app_theme.dart` and used throughout the app. No hardcoded colors in widgets.
+- **AppStrings:** All user-facing strings are in `constants/app_strings.dart` for easy translation and i18n.
+
+---
 
 ## Dependencies
 
-- **flutter_bloc:** BLoC state management
-- **http:** For API requests
-- **equatable:** For value equality in models/BLoC states
-- **flutter_test:** Native testing
-- **mockito:** For mocking API responses in tests
+- `flutter_bloc` — BLoC state management
+- `http` — API requests
+- `equatable` — Value equality for models and states
+- `flutter_test` — Native testing
+- `mockito` — Mocking for tests
 
-## Challenges & Solutions
-
-- **API Structure:** The API models required careful parsing, especially for EVSE list/count and status computation. I isolated parsing logic in `models/` and wrote tests.
-- **Availability Indicator:** Needed to dynamically calculate and display an icon based on EVSE availability ratio. Solved using helper methods in the model and custom widget.
-- **Error Handling:** Implemented error states in BLoC, showing error messages and retry options in UI.
+---
 
 ## Setup Guide
 
-1. **Clone the Repo:**  
-   `git clone https://github.com/Asim-7/charge_locations_app.git`
+1. **Clone the Repo:**
+   ```sh
+   git clone https://github.com/Asim-7/charge_locations_app.git
+   ```
+2. **Install Dependencies:**
+   ```sh
+   flutter pub get
+   ```
+3. **Run the App:**
+   ```sh
+   flutter run
+   ```
+4. **Run Tests:**
+   ```sh
+   flutter test
+   ```
+5. **API:**
+   No API key required. Ensure network connectivity. The base URL is set in `constants/app_strings.dart`.
 
-2. **Install Dependencies:**  
-   `flutter pub get`
-
-3. **Run the App:**  
-   `flutter run`
-
-4. **Run Tests:**  
-   `flutter test`
-
-5. **API:**  
-   No API key required. Ensure network connectivity. The base URL is set in `api_provider.dart`.
+---
 
 ## Screenshots
 
