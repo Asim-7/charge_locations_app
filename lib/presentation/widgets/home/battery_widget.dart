@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 
 class BatteryWidget extends StatelessWidget {
   final int batteryPercent;
@@ -15,12 +16,12 @@ class BatteryWidget extends StatelessWidget {
       width: 70,
       height: 120,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(
             blurRadius: 8,
-            color: Colors.grey.shade200,
+            color: AppTheme.cardShadow,
             offset: const Offset(2, 2),
           ),
         ],
@@ -33,10 +34,10 @@ class BatteryWidget extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             '$batteryPercent%',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.bold,
-              color: Colors.grey,
+              color: AppTheme.textSecondary,
             ),
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 
 class CarInfoHeader extends StatelessWidget {
   final String carModel;
@@ -26,12 +27,15 @@ class CarInfoHeader extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: AppTheme.textPrimary,
               ),
             ),
             Text(
               carBrand,
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
+              style: const TextStyle(
+                fontSize: 14,
+                color: AppTheme.textSecondary,
+              ),
             ),
           ],
         ),
@@ -41,7 +45,7 @@ class CarInfoHeader extends StatelessWidget {
               icon: const Icon(
                 Icons.notifications_none_outlined,
                 size: 28,
-                color: Colors.black,
+                color: AppTheme.icon,
               ),
               onPressed: () {},
             ),
@@ -58,7 +62,7 @@ class CarInfoHeader extends StatelessWidget {
                   child: Text(
                     '$notificationCount',
                     style: const TextStyle(
-                      color: Colors.white,
+                      color: AppTheme.cardBackground,
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),

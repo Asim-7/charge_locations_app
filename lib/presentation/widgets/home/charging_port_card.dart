@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 
 class ChargingPortCard extends StatelessWidget {
   final String chargingPortType;
@@ -14,7 +15,7 @@ class ChargingPortCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(18),
       ),
       child: Row(
@@ -27,14 +28,14 @@ class ChargingPortCard extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: const Icon(
               Icons.power_outlined,
-              color: Colors.black,
+              color: AppTheme.icon,
               size: 28,
             ),
           ),
           const SizedBox(width: 12),
           const Text(
             'Charging Port',
-            style: TextStyle(fontSize: 15, color: Colors.grey),
+            style: TextStyle(fontSize: 15, color: AppTheme.textSecondary),
           ),
           const Spacer(),
           Text(

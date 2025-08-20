@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 
 class DistanceEnergyRow extends StatelessWidget {
   final int distanceKm;
@@ -19,7 +20,7 @@ class DistanceEnergyRow extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppTheme.cardBackground,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(
@@ -27,19 +28,22 @@ class DistanceEnergyRow extends StatelessWidget {
               children: [
                 const Text(
                   'Distance',
-                  style: TextStyle(fontSize: 13, color: Colors.grey),
+                  style: TextStyle(fontSize: 13, color: AppTheme.textSecondary),
                 ),
                 Text(
                   '$distanceKm km',
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppTheme.textPrimary,
                   ),
                 ),
                 Text(
                   timeLeft,
-                  style: const TextStyle(fontSize: 13, color: Colors.grey),
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: AppTheme.textSecondary,
+                  ),
                 ),
               ],
             ),
@@ -50,7 +54,7 @@ class DistanceEnergyRow extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppTheme.cardBackground,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(
@@ -58,19 +62,22 @@ class DistanceEnergyRow extends StatelessWidget {
               children: [
                 const Text(
                   'Energy',
-                  style: TextStyle(fontSize: 13, color: Colors.grey),
+                  style: TextStyle(fontSize: 13, color: AppTheme.textSecondary),
                 ),
                 Text(
                   '$energyKwh kwh',
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppTheme.textPrimary,
                   ),
                 ),
                 Text(
                   'Single battery',
-                  style: const TextStyle(fontSize: 13, color: Colors.grey),
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: AppTheme.textSecondary,
+                  ),
                 ),
               ],
             ),

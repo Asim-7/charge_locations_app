@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class NearbyStationCard extends StatelessWidget {
@@ -20,7 +21,7 @@ class NearbyStationCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(18),
       ),
       child: Row(
@@ -91,8 +92,8 @@ class NearbyStationCard extends StatelessWidget {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    foregroundColor: Colors.white,
+                    backgroundColor: AppTheme.icon,
+                    foregroundColor: AppTheme.cardBackground,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -105,14 +106,18 @@ class NearbyStationCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.location_on, color: accentGreen, size: 25),
+                    Icon(
+                      Icons.location_on,
+                      color: AppTheme.routeStart,
+                      size: 25,
+                    ),
                     Container(
                       width: 80,
                       height: 2,
-                      color: accentGreen,
+                      color: AppTheme.routeLine,
                       margin: const EdgeInsets.symmetric(horizontal: 8),
                     ),
-                    Icon(Icons.ev_station, color: Colors.green, size: 25),
+                    Icon(Icons.ev_station, color: AppTheme.routeEnd, size: 25),
                   ],
                 ),
               ],

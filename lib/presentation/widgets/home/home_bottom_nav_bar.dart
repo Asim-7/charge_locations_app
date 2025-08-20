@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 
 class HomeBottomNavBar extends StatelessWidget {
   final Color accentGreen;
@@ -21,7 +22,7 @@ class HomeBottomNavBar extends StatelessWidget {
     ];
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppTheme.navBarBg,
         borderRadius: BorderRadius.circular(26),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -36,8 +37,8 @@ class HomeBottomNavBar extends StatelessWidget {
                       item.icon,
                       color:
                           selectedIndex == item.index
-                              ? accentGreen
-                              : Colors.grey,
+                              ? AppTheme.navBarSelected
+                              : AppTheme.navBarUnselected,
                       size: 28,
                     ),
                     onPressed: () => onItemTapped(item.index),
