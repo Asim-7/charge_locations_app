@@ -90,6 +90,7 @@ test/
 - `equatable` — Value equality for models and states
 - `flutter_test` — Native testing
 - `mockito` — Mocking for tests
+- `shared_preferences` — Local persistence for navigation and search state.
 
 ---
 
@@ -113,6 +114,15 @@ test/
    ```
 5. **API:**
    No API key required. Ensure network connectivity. The base URL is set in `constants/app_strings.dart`.
+
+---
+
+## Challenges & Solutions
+
+- **State Restoration:** Needed persistent navigation and search state. Used `shared_preferences` via a use case abstraction for testability and separation of concerns.
+- **Testing Asynchronous Logic:** BLoC and repository logic required async test setup and proper use of mocks. Used `mockito` and `flutter_test` utilities to ensure reliable, isolated tests.
+- **Clean Architecture Discipline:** Keeping UI, domain, and data layers decoupled required careful dependency management and clear folder structure. Used a service locator for dependency injection and clear module boundaries.
+- **Dynamic Theming:** Ensured all widgets use theme colors for seamless light/dark mode. Solved by centralizing all color references in `AppTheme` and using `Theme.of(context)` where possible.
 
 ---
 
