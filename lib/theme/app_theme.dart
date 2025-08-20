@@ -1,6 +1,31 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
+  // Search widgets
+  static const Color searchCard = Colors.white;
+  static const Color searchCardBorder = Color(
+    0xFFE0E0E0,
+  ); // Colors.grey.shade300
+  static const Color searchCardShadow = Color(
+    0xFFF5F5F5,
+  ); // Colors.grey.shade200
+  static const Color searchIcon = Colors.black;
+  static const Color searchIconSecondary = Colors.grey;
+  static const Color searchIconAccent = accentGreen;
+  static const Color searchTextPrimary = Colors.black;
+  static const Color searchTextSecondary = Colors.grey;
+  static const Color searchError = Colors.red;
+  static const Color searchAvailable = accentGreen;
+  static const Color searchUnavailable = Colors.red;
+  static const Color searchIconBg = Color(0xFFE8F5E9);
+  static const Color searchDivider = searchCardBorder;
+  static const Color searchListShadow = searchCardShadow;
+  static const Color searchListAvailableBg = Color(
+    0x216CF05A,
+  ); // accentGreen with 13% alpha
+  static const Color searchListUnavailableBg = Color(
+    0x21FF0000,
+  ); // red with 13% alpha
   // Home widgets
   static const Color cardBackground = Colors.white;
   static const Color cardBorder = Color(0xFFE0E0E0); // Colors.grey.shade300

@@ -1,5 +1,6 @@
 import 'package:charge_locations_app/navigation/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 import '../../widgets/search/location_list_item.dart';
 
 /// Widget to display a list of locations
@@ -15,7 +16,7 @@ class LocationList extends StatelessWidget {
           padding: EdgeInsets.only(top: 64),
           child: Text(
             'No locations found.',
-            style: TextStyle(fontSize: 18, color: Colors.grey),
+            style: TextStyle(fontSize: 18, color: AppTheme.searchTextSecondary),
           ),
         ),
       );
@@ -31,7 +32,7 @@ class LocationList extends StatelessWidget {
         const SizedBox(height: 6),
 
         // Divider
-        Divider(thickness: 1, color: Colors.grey.shade300),
+        Divider(thickness: 1, color: AppTheme.searchDivider),
 
         // Location list
         Expanded(

@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 /// Widget to display a search bar for locations
@@ -21,7 +22,7 @@ class LocationSearchBar extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppTheme.searchCard,
               borderRadius: BorderRadius.circular(14),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -44,7 +45,7 @@ class LocationSearchBar extends StatelessWidget {
                         )
                         : IconButton(
                           icon: const Icon(Icons.search),
-                          color: Colors.grey.shade400,
+                          color: AppTheme.searchTextSecondary,
                           onPressed: onSearch,
                           tooltip: 'Search',
                         ),
@@ -58,11 +59,11 @@ class LocationSearchBar extends StatelessWidget {
         // Filter button
         Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppTheme.searchCard,
             borderRadius: BorderRadius.circular(14),
           ),
           padding: const EdgeInsets.all(14),
-          child: const Icon(Icons.tune, color: Colors.black),
+          child: const Icon(Icons.tune, color: AppTheme.searchIcon),
         ),
       ],
     );

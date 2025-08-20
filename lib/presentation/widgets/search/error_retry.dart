@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// Widget to display an error message with a retry button
 class ErrorRetry extends StatelessWidget {
@@ -14,7 +15,7 @@ class ErrorRetry extends StatelessWidget {
         children: [
           Text(
             message,
-            style: const TextStyle(color: Colors.red),
+            style: const TextStyle(color: AppTheme.searchError),
             semanticsLabel: 'Error message',
           ),
           const SizedBox(height: 8),

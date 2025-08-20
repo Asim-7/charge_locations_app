@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/charge_location.dart';
 import '../../../utils/address_utils.dart';
+import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// Widget to display a single location in the search results
 class LocationListItem extends StatelessWidget {
@@ -21,15 +22,18 @@ class LocationListItem extends StatelessWidget {
         totalCount == 0 ? false : availableCount > totalCount / 2;
 
     // Colors & styles
-    const accentGreen = Color(0xFF6CF05A);
-    final cardColor = Colors.white;
+    final accentGreen = AppTheme.searchAvailable;
+    final cardColor = AppTheme.searchCard;
     final iconBg =
         isMostlyAvailable
-            ? accentGreen.withAlpha((0.13 * 255).toInt())
-            : Colors.red.withAlpha((0.13 * 255).toInt());
+            ? AppTheme.searchListAvailableBg
+            : AppTheme.searchListUnavailableBg;
     final icon = isMostlyAvailable ? Icons.check_circle : Icons.cancel;
-    final iconColor = isMostlyAvailable ? accentGreen : Colors.red;
-    final iconBgLogo = Color(0xFFE8F5E9);
+    final iconColor =
+        isMostlyAvailable
+            ? AppTheme.searchAvailable
+            : AppTheme.searchUnavailable;
+    final iconBgLogo = AppTheme.searchIconBg;
 
     // Split address using reusable function from utils
     final addressParts = splitAddress(location.address);
@@ -47,7 +51,7 @@ class LocationListItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withAlpha((0.07 * 255).toInt()),
+                color: AppTheme.searchListShadow,
                 blurRadius: 10,
                 offset: const Offset(1, 3),
               ),
@@ -65,7 +69,7 @@ class LocationListItem extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: const Icon(
                   Icons.ev_station,
-                  color: Colors.black,
+                  color: AppTheme.searchIcon,
                   size: 28,
                 ),
               ),
@@ -98,7 +102,7 @@ class LocationListItem extends StatelessWidget {
                           '$availableCount AVAILABLE',
                           style: TextStyle(
                             fontSize: 13,
-                            color: Colors.grey,
+                            color: AppTheme.searchTextSecondary,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -107,7 +111,7 @@ class LocationListItem extends StatelessWidget {
                           '/ $totalCount EVSEs',
                           style: const TextStyle(
                             fontSize: 13,
-                            color: Colors.grey,
+                            color: AppTheme.searchTextSecondary,
                           ),
                         ),
                       ],
