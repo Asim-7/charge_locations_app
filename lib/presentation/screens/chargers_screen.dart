@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/presentation/widgets/detail/connector_list.dart';
 import 'package:flutter/material.dart';
 
 // Dummy connector data
@@ -67,21 +68,17 @@ class ChargersScreen extends StatelessWidget {
 
           // Main content inside SafeArea
           SafeArea(
-            child: SingleChildScrollView(
+            child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Back button overlay
-                  Positioned(
-                    left: 30,
-                    top: 32,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_back, color: Colors.black),
-                        onPressed: () => Navigator.pop(context),
-                      ),
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_back, color: Colors.black),
+                      onPressed: () => Navigator.pop(context),
                     ),
                   ),
 
@@ -180,87 +177,15 @@ class ChargersScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 18),
                   // Available Connectors
-                  const Text(
-                    'Available Connectors',
+                  Text(
+                    '${connectors.length} Connectors',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                   const SizedBox(height: 10),
-                  ...connectors.map(
-                    (connector) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: Colors.grey.shade300),
-                        ),
-                        child: ListTile(
-                          leading: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              connector.imagePath,
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) {
-                                return const Icon(
-                                  Icons.broken_image,
-                                  size: 50,
-                                  color: Colors.grey,
-                                );
-                              },
-                            ),
-                          ),
-                          title: Text(
-                            connector.name,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          subtitle: Row(
-                            children: [
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.attach_money,
-                                    size: 17,
-                                    color: Colors.black,
-                                  ),
-                                  const SizedBox(width: 2),
-                                  Text(
-                                    connector.price,
-                                    style: const TextStyle(fontSize: 13),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(width: 13),
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.ev_station,
-                                    size: 17,
-                                    color: Colors.black54,
-                                  ),
-                                  const SizedBox(width: 2),
-                                  Text(
-                                    connector.slot,
-                                    style: const TextStyle(fontSize: 13),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          trailing: const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.grey,
-                            size: 18,
-                          ),
-                          onTap: () {},
-                        ),
-                      ),
-                    ),
-                  ),
+
+                  // Connector List
+                  ConnectorList(connectors: connectors),
+
                   const SizedBox(height: 18),
                   // Choose Date & Time
                   const Text(
