@@ -21,7 +21,14 @@ class ErrorRetry extends StatelessWidget {
           const SizedBox(height: 8),
           ElevatedButton(
             onPressed: onRetry,
-            child: const Text(AppStrings.retry, semanticsLabel: 'Retry search'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).primaryColor,
+            ),
+            child: const Text(
+              AppStrings.retry,
+              semanticsLabel: 'Retry search',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ],
       ),
