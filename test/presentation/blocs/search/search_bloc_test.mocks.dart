@@ -109,4 +109,21 @@ class MockCachedLocationsUsecase extends _i1.Mock
             returnValueForMissingStub: _i5.Future<void>.value(),
           )
           as _i5.Future<void>);
+
+  @override
+  _i5.Future<int> getBottomNavIndex() =>
+      (super.noSuchMethod(
+            Invocation.method(#getBottomNavIndex, []),
+            returnValue: _i5.Future<int>.value(0),
+          )
+          as _i5.Future<int>);
+
+  @override
+  _i5.Future<void> saveBottomNavIndex(int? index) =>
+      (super.noSuchMethod(
+            Invocation.method(#saveBottomNavIndex, [index]),
+            returnValue: _i5.Future<void>.value(),
+            returnValueForMissingStub: _i5.Future<void>.value(),
+          )
+          as _i5.Future<void>);
 }
