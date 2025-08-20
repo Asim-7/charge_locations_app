@@ -14,6 +14,18 @@ class FakeLocalCacheService implements LocalCacheService {
   Future<Map<String, dynamic>?> getLastSearch() async {
     return _cache;
   }
+
+  int? _bottomNavIndex;
+
+  @override
+  Future<int> getBottomNavIndex() async {
+    return _bottomNavIndex ?? 0;
+  }
+
+  @override
+  Future<void> saveBottomNavIndex(int index) async {
+    _bottomNavIndex = index;
+  }
 }
 
 void main() {
