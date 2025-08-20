@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class LocalCacheService {
   static const String lastCityKey = 'last_city';
   static const String lastCityDataKey = 'last_city_data';
+  static const String bottomNavIndexKey = 'selected_nav_index';
 
   /// Saves the last searched city and its data
   Future<void> saveLastSearch(String city, List<dynamic> data) async {
@@ -23,5 +24,17 @@ class LocalCacheService {
       return {'city': city, 'data': data};
     }
     return null;
+  }
+
+  /// Saves the selected bottom navigation index
+  Future<void> saveBottomNavIndex(int index) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(bottomNavIndexKey, index);
+  }
+
+  // Retrieves the selected bottom navigation index
+  Future<int> getBottomNavIndex() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(bottomNavIndexKey) ?? 0;
   }
 }

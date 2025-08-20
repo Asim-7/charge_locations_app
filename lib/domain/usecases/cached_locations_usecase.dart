@@ -18,4 +18,12 @@ class CachedLocationsUsecase {
   Future<void> saveLastSearch(String city, List<dynamic> data) async {
     await cacheService.saveLastSearch(city, data);
   }
+
+  Future<int> getBottomNavIndex() async {
+    return await cacheService.getBottomNavIndex();
+  }
+
+  Future<void> saveBottomNavIndex(int index) async {
+    await cacheService.saveBottomNavIndex(index);
+  }
 }

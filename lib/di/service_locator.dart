@@ -13,9 +13,6 @@ final diInstance = GetIt.instance;
 
 /// Service Locator for dependency injection
 void setupLocator() {
-  // Register BottomNavCubit
-  diInstance.registerLazySingleton(() => BottomNavCubit());
-
   // Register API provider
   diInstance.registerLazySingleton<ApiProvider>(() => ApiProvider());
 
@@ -41,6 +38,13 @@ void setupLocator() {
   diInstance.registerFactory(
     () => LocationSearchBloc(
       fetchLocations: diInstance<FetchLocationsUsecase>(),
+      cachedLocationsUsecase: diInstance<CachedLocationsUsecase>(),
+    ),
+  );
+
+  // Register BottomNavCubit
+  diInstance.registerLazySingleton(
+    () => BottomNavCubit(
       cachedLocationsUsecase: diInstance<CachedLocationsUsecase>(),
     ),
   );
