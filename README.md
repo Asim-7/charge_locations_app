@@ -44,7 +44,7 @@ A modern Flutter app to search for EV charge locations by city, view real-time a
 
 ---
 
-## Project Structure (2025)
+## Project Structure
 
 ```
 lib/
