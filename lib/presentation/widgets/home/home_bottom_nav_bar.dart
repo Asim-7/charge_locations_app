@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
+import 'package:charge_locations_app/data/models/nav_bar_item.dart';
 
 /// A widget that displays the bottom navigation bar.
 class HomeBottomNavBar extends StatelessWidget {
@@ -16,10 +17,10 @@ class HomeBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = [
-      _NavBarItem(icon: Icons.home_rounded, index: 0),
-      _NavBarItem(icon: Icons.ev_station_outlined, index: 1),
-      _NavBarItem(icon: Icons.map_outlined, index: 2),
-      _NavBarItem(icon: Icons.person_outline, index: 3),
+      NavBarItem(icon: Icons.home_rounded, index: 0),
+      NavBarItem(icon: Icons.ev_station_outlined, index: 1),
+      NavBarItem(icon: Icons.map_outlined, index: 2),
+      NavBarItem(icon: Icons.person_outline, index: 3),
     ];
     return Container(
       decoration: BoxDecoration(
@@ -49,10 +50,4 @@ class HomeBottomNavBar extends StatelessWidget {
       ),
     );
   }
-}
-
-class _NavBarItem {
-  final IconData icon;
-  final int index;
-  const _NavBarItem({required this.icon, required this.index});
 }
