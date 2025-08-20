@@ -5,18 +5,7 @@ import '../widgets/home/car_image_placeholder.dart';
 import '../widgets/home/distance_energy_row.dart';
 import '../widgets/home/charging_port_card.dart';
 import '../widgets/home/nearby_station_card.dart';
-
-// Dummy data for demonstration
-const carModel = 'Model X';
-const carBrand = 'Tesla 2025';
-const batteryPercent = 50;
-const distanceKm = 70;
-const timeLeft = '1h 20m';
-const energyKwh = 68.2;
-const chargingPortType = 'Type A';
-const stationName = 'Spark EV Station';
-const stationDistanceKm = 1.8;
-const stationTimeMin = 3;
+import '../../data/providers/main_content_dummy_data.dart';
 
 class MainContentScreen extends StatelessWidget {
   const MainContentScreen({super.key});
