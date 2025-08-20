@@ -8,6 +8,12 @@ class ConnectorItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const accentGreen = Color(0xFF6CF05A);
+    // final iconBg =
+    //     isMostlyAvailable
+    //         ? accentGreen.withAlpha((0.13 * 255).toInt())
+    //         : Colors.red.withAlpha((0.13 * 255).toInt());
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Container(
@@ -19,18 +25,17 @@ class ConnectorItem extends StatelessWidget {
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.asset(
-              connector.imagePath,
-              width: 50,
-              height: 50,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return const Icon(
-                  Icons.broken_image,
-                  size: 50,
-                  color: Colors.grey,
-                );
-              },
+            child: Container(
+              decoration: BoxDecoration(
+                color: accentGreen.withAlpha((0.13 * 255).toInt()),
+                shape: BoxShape.circle,
+              ),
+              padding: const EdgeInsets.all(10),
+              child: const Icon(
+                Icons.electric_car,
+                color: Colors.black,
+                size: 28,
+              ),
             ),
           ),
           title: Text(

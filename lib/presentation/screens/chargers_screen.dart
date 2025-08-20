@@ -6,35 +6,14 @@ class Connector {
   final String name;
   final String price;
   final String slot;
-  final String imagePath;
 
-  Connector({
-    required this.name,
-    required this.price,
-    required this.slot,
-    required this.imagePath,
-  });
+  Connector({required this.name, required this.price, required this.slot});
 }
 
 final connectors = [
-  Connector(
-    name: 'Type A',
-    price: '\$1.00/ kWh',
-    slot: 'Slot A',
-    imagePath: 'assets/images/tesla.png',
-  ),
-  Connector(
-    name: 'CHAdeMO',
-    price: '\$0.5/ kWh',
-    slot: 'Slot B',
-    imagePath: 'assets/images/tesla.png',
-  ),
-  Connector(
-    name: 'Type B',
-    price: '\$0.75/ kWh',
-    slot: 'Slot C',
-    imagePath: 'assets/images/tesla.png',
-  ),
+  Connector(name: 'Type A', price: '\$1.00/ kWh', slot: 'Slot A'),
+  Connector(name: 'CHAdeMO', price: '\$0.5/ kWh', slot: 'Slot B'),
+  Connector(name: 'Type B', price: '\$0.75/ kWh', slot: 'Slot C'),
 ];
 
 class ChargersScreen extends StatelessWidget {
