@@ -3,10 +3,10 @@ import 'package:charge_locations_app/presentation/blocs/search/search_state.dart
 import 'package:charge_locations_app/presentation/widgets/search/location_search_bar_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../blocs/search/search_bloc.dart';
-import '../../widgets/search/location_list.dart';
-import '../../widgets/search/empty_state.dart';
-import '../../widgets/search/error_retry.dart';
+import '../blocs/search/search_bloc.dart';
+import '../widgets/search/location_list.dart';
+import '../widgets/search/empty_state.dart';
+import '../widgets/search/error_retry.dart';
 
 /// Search screen for finding charge locations
 class SearchScreen extends StatefulWidget {

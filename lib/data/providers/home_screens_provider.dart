@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:charge_locations_app/presentation/screens/main_content_screen.dart';
-import 'package:charge_locations_app/presentation/screens/search/search_screen.dart';
+import 'package:charge_locations_app/presentation/screens/search_screen.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_bloc.dart';
 import 'package:charge_locations_app/di/service_locator.dart';
 
