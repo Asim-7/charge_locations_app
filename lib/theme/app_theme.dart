@@ -11,7 +11,7 @@ class AppTheme {
   static const Color searchError = Colors.red;
   static const Color searchIconBg = Color(0xFFE8F5E9);
   static const Color searchListAvailableBg = Color(0x216CF05A);
-  static const Color searchListUnavailableBg = Color(0x21FF0000);
+  static const Color searchListUnavailableBg = Color(0x21FF0000); // Done here
   static const Color statusAvailable = Colors.green;
   static const Color backgroundColor = Color(0xFFF4F6F8);
   static const Color gradientStart = Color(0xFFE0F7FA); // Light cyan
@@ -48,6 +48,7 @@ class AppTheme {
       brightness: Brightness.light,
       primary: accentGreen,
       onPrimary: searchIcon,
+      onPrimaryContainer: searchIconBg,
       secondary: searchIconSecondary,
       onSecondary: searchIcon,
       error: searchError,
@@ -123,6 +124,7 @@ class AppTheme {
       brightness: Brightness.dark,
       primary: darkAccentGreen,
       onPrimary: darkSearchIcon,
+      onPrimaryContainer: darkSearchIconBg,
       secondary: darkSearchIconSecondary,
       onSecondary: darkSearchIcon,
       error: darkSearchError,

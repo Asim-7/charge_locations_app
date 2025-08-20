@@ -63,10 +63,10 @@ class _SearchScreenState extends State<SearchScreen> {
               // Title
               Text(
                 AppStrings.chargeLocationsTitle,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: AppTheme.searchIcon,
+                  color: Theme.of(context).colorScheme.onPrimary,
                 ),
               ),
 
@@ -94,13 +94,16 @@ class _SearchScreenState extends State<SearchScreen> {
                 children: [
                   Icon(
                     Icons.my_location,
-                    color: AppTheme.accentGreen,
+                    color: Theme.of(context).primaryColor,
                     size: 23,
                   ),
                   const SizedBox(width: 8),
-                  const Text(
+                  Text(
                     AppStrings.currentLocation,
-                    style: TextStyle(fontSize: 16, color: AppTheme.searchIcon),
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
                   ),
                 ],
               ),

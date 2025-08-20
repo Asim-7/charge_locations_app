@@ -1,6 +1,5 @@
 import 'package:charge_locations_app/data/models/evse.dart';
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:charge_locations_app/utils/status_utils.dart';
 
 // Widget for a single connector item
@@ -18,7 +17,7 @@ class ConnectorItem extends StatelessWidget {
         decoration: BoxDecoration(
           color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: AppTheme.searchCardBorder),
+          border: Border.all(color: Theme.of(context).colorScheme.outline),
         ),
         child: ListTile(
           // Leading icon with status color
@@ -30,9 +29,9 @@ class ConnectorItem extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               padding: const EdgeInsets.all(10),
-              child: const Icon(
+              child: Icon(
                 Icons.electric_car,
-                color: AppTheme.searchIcon,
+                color: Theme.of(context).colorScheme.onPrimary,
                 size: 28,
               ),
             ),
@@ -53,10 +52,10 @@ class ConnectorItem extends StatelessWidget {
               // Price
               Row(
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.attach_money,
                     size: 17,
-                    color: AppTheme.searchIcon,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   ),
                   const SizedBox(width: 2),
                   Text('\$1.00/ kWh', style: const TextStyle(fontSize: 13)),
@@ -67,7 +66,11 @@ class ConnectorItem extends StatelessWidget {
               // Power Type
               Row(
                 children: [
-                  Icon(Icons.ev_station, size: 17, color: AppTheme.accentGreen),
+                  Icon(
+                    Icons.ev_station,
+                    size: 17,
+                    color: Theme.of(context).primaryColor,
+                  ),
                   const SizedBox(width: 2),
                   Text(
                     connector.powerType,
@@ -77,9 +80,9 @@ class ConnectorItem extends StatelessWidget {
               ),
             ],
           ),
-          trailing: const Icon(
+          trailing: Icon(
             Icons.arrow_forward_ios,
-            color: AppTheme.searchIconSecondary,
+            color: Theme.of(context).colorScheme.secondary,
             size: 18,
           ),
           onTap: () {},

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:charge_locations_app/data/models/nav_bar_item.dart';
 
 /// A widget that displays the bottom navigation bar.
@@ -39,8 +38,8 @@ class HomeBottomNavBar extends StatelessWidget {
                       item.icon,
                       color:
                           selectedIndex == item.index
-                              ? AppTheme.accentGreen
-                              : AppTheme.searchIconSecondary,
+                              ? Theme.of(context).primaryColor
+                              : Theme.of(context).colorScheme.secondary,
                       size: 28,
                     ),
                     onPressed: () => onItemTapped(item.index),

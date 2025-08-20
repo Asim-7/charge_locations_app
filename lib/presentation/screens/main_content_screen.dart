@@ -25,7 +25,7 @@ class MainContentScreen extends StatelessWidget {
               carModel: carModel,
               carBrand: carBrand,
               notificationCount: 2,
-              accentGreen: AppTheme.accentGreen,
+              accentGreen: Theme.of(context).primaryColor,
             ),
             const SizedBox(height: 18),
 
@@ -35,7 +35,7 @@ class MainContentScreen extends StatelessWidget {
               children: [
                 BatteryWidget(
                   batteryPercent: batteryPercent,
-                  accentGreen: AppTheme.accentGreen,
+                  accentGreen: Theme.of(context).primaryColor,
                 ),
                 const SizedBox(child: CarImagePlaceholder()),
               ],
@@ -53,7 +53,7 @@ class MainContentScreen extends StatelessWidget {
             // Charging Port Card
             ChargingPortCard(
               chargingPortType: chargingPortType,
-              iconBg: AppTheme.searchIconBg,
+              iconBg: Theme.of(context).colorScheme.onPrimaryContainer,
             ),
             const SizedBox(height: 18),
 
@@ -62,7 +62,7 @@ class MainContentScreen extends StatelessWidget {
               stationName: stationName,
               stationDistanceKm: stationDistanceKm,
               stationTimeMin: stationTimeMin,
-              accentGreen: AppTheme.accentGreen,
+              accentGreen: Theme.of(context).primaryColor,
               bgColor: AppTheme.backgroundColor,
             ),
           ],

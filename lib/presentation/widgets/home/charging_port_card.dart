@@ -1,6 +1,5 @@
 import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// A card widget that displays information about a charging port.
 class ChargingPortCard extends StatelessWidget {
@@ -30,18 +29,21 @@ class ChargingPortCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             padding: const EdgeInsets.all(8),
-            child: const Icon(
+            child: Icon(
               Icons.power_outlined,
-              color: AppTheme.searchIcon,
+              color: Theme.of(context).colorScheme.onPrimary,
               size: 28,
             ),
           ),
           const SizedBox(width: 12),
 
           // Charging port type text
-          const Text(
+          Text(
             AppStrings.chargingPort,
-            style: TextStyle(fontSize: 15, color: AppTheme.searchIconSecondary),
+            style: TextStyle(
+              fontSize: 15,
+              color: Theme.of(context).colorScheme.secondary,
+            ),
           ),
           const Spacer(),
 

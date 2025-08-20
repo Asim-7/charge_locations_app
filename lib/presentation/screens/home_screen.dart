@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             // using IndexedStack to preserve state
             body: IndexedStack(index: selectedIndex, children: _screens),
             bottomNavigationBar: HomeBottomNavBar(
-              accentGreen: AppTheme.accentGreen,
+              accentGreen: Theme.of(context).primaryColor,
               selectedIndex: selectedIndex,
               onItemTapped:
                   (index) =>

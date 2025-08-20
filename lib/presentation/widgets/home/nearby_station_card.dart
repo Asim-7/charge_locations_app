@@ -104,7 +104,7 @@ class NearbyStationCard extends StatelessWidget {
                 // Get Direction button
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.searchIcon,
+                    backgroundColor: Theme.of(context).colorScheme.onPrimary,
                     foregroundColor: Theme.of(context).cardColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
@@ -123,7 +123,7 @@ class NearbyStationCard extends StatelessWidget {
                     // Start location
                     Icon(
                       Icons.location_on,
-                      color: AppTheme.accentGreen,
+                      color: Theme.of(context).primaryColor,
                       size: 25,
                     ),
 
@@ -131,7 +131,7 @@ class NearbyStationCard extends StatelessWidget {
                     Container(
                       width: 80,
                       height: 2,
-                      color: AppTheme.accentGreen,
+                      color: Theme.of(context).primaryColor,
                       margin: const EdgeInsets.symmetric(horizontal: 8),
                     ),
 
