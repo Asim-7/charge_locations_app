@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
 
@@ -21,7 +22,7 @@ class ErrorRetry extends StatelessWidget {
           const SizedBox(height: 8),
           ElevatedButton(
             onPressed: onRetry,
-            child: const Text('Retry', semanticsLabel: 'Retry search'),
+            child: const Text(AppStrings.retry, semanticsLabel: 'Retry search'),
           ),
         ],
       ),

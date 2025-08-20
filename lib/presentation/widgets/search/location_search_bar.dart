@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class LocationSearchBar extends StatelessWidget {
               controller: controller,
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: 'Search by city',
+                hintText: AppStrings.searchByCity,
                 isCollapsed: false,
                 contentPadding: const EdgeInsets.symmetric(vertical: 16),
                 suffixIcon:

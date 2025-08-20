@@ -8,6 +8,7 @@ import '../blocs/search/search_bloc.dart';
 import '../widgets/search/location_list.dart';
 import '../widgets/search/empty_state.dart';
 import '../widgets/search/error_retry.dart';
+import 'package:charge_locations_app/constants/app_strings.dart';
 
 /// Search screen for finding charge locations
 class SearchScreen extends StatefulWidget {
@@ -61,7 +62,7 @@ class _SearchScreenState extends State<SearchScreen> {
             children: [
               // Title
               Text(
-                'Charge Locations',
+                AppStrings.chargeLocationsTitle,
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -98,7 +99,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                   const SizedBox(width: 8),
                   const Text(
-                    'Current location',
+                    AppStrings.currentLocation,
                     style: TextStyle(fontSize: 16, color: AppTheme.textPrimary),
                   ),
                 ],
@@ -119,9 +120,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     } else if (state is LocationSearchLoaded) {
                       return LocationList(locations: state.locations);
                     }
-                    return const EmptyState(
-                      message: 'Search for charge locations.',
-                    );
+                    return const EmptyState(message: AppStrings.searchPrompt);
                   },
                 ),
               ),

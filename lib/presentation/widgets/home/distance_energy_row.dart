@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
 
@@ -29,9 +30,12 @@ class DistanceEnergyRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Distance label
-                const Text(
-                  'Distance',
-                  style: TextStyle(fontSize: 13, color: AppTheme.textSecondary),
+                Text(
+                  AppStrings.distance,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: AppTheme.textSecondary,
+                  ),
                 ),
 
                 // Distance value
@@ -71,7 +75,7 @@ class DistanceEnergyRow extends StatelessWidget {
               children: [
                 // Energy label
                 const Text(
-                  'Energy',
+                  AppStrings.energy,
                   style: TextStyle(fontSize: 13, color: AppTheme.textSecondary),
                 ),
 
@@ -87,7 +91,7 @@ class DistanceEnergyRow extends StatelessWidget {
 
                 // Energy time left
                 Text(
-                  'Single battery',
+                  AppStrings.singleBattery,
                   style: const TextStyle(
                     fontSize: 13,
                     color: AppTheme.textSecondary,

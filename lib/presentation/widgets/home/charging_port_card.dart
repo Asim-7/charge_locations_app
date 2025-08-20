@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
 
@@ -39,7 +40,7 @@ class ChargingPortCard extends StatelessWidget {
 
           // Charging port type text
           const Text(
-            'Charging Port',
+            AppStrings.chargingPort,
             style: TextStyle(fontSize: 15, color: AppTheme.textSecondary),
           ),
           const Spacer(),

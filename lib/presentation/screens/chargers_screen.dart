@@ -7,6 +7,7 @@ import 'package:charge_locations_app/presentation/widgets/detail/chargers_header
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_rating_row.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_distance_time_row.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_date_time_picker_row.dart';
+import 'package:charge_locations_app/constants/app_strings.dart';
 
 /// Screen displaying details for a specific charging station.
 class ChargersScreen extends StatelessWidget {
@@ -63,7 +64,7 @@ class ChargersScreen extends StatelessWidget {
 
                   // Available Connectors
                   Text(
-                    '${location.evses.length} Connector(s)',
+                    '${location.evses.length} ${AppStrings.connectorsSuffix}',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
@@ -77,7 +78,7 @@ class ChargersScreen extends StatelessWidget {
                   const SizedBox(height: 18),
                   // Choose Date & Time
                   const Text(
-                    'Choose Date & Time',
+                    AppStrings.chooseDateTime,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                   const SizedBox(height: 9),
@@ -100,7 +101,7 @@ class ChargersScreen extends StatelessWidget {
                       ),
                       onPressed: () {},
                       child: const Text(
-                        'Confirm Booking',
+                        AppStrings.confirmBooking,
                         style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,

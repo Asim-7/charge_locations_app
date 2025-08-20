@@ -1,11 +1,11 @@
 import 'dart:convert';
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:http/http.dart' as http;
 
 /// API provider for fetching charge locations and details
 class ApiProvider {
   final http.Client client;
-  static const String baseUrl =
-      'https://app-assignment-api-test.azurewebsites.net';
+  static const String baseUrl = AppStrings.baseUrl;
 
   ApiProvider({http.Client? client}) : client = client ?? http.Client();
 
@@ -22,14 +22,14 @@ class ApiProvider {
         if (data is List) {
           return data;
         } else {
-          throw Exception('Unexpected response format');
+          throw Exception(AppStrings.unexpectedResponse);
         }
       } catch (e) {
-        throw Exception('Failed to parse locations: $e');
+        throw Exception('${AppStrings.failedToParse}: $e');
       }
     } else {
       throw Exception(
-        'Failed to load locations: ${response.statusCode} ${response.reasonPhrase}',
+        '${AppStrings.failedToLoad}: ${response.statusCode} ${response.reasonPhrase}',
       );
     }
   }

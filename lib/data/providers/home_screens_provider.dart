@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:charge_locations_app/presentation/screens/main_content_screen.dart';
@@ -12,9 +13,11 @@ List<Widget> getHomeScreens() => <Widget>[
     create: (_) => diInstance<LocationSearchBloc>(),
     child: const SearchScreen(),
   ),
-  const Center(child: Text('📍 Map Screen', style: TextStyle(fontSize: 24))),
+  const Center(
+    child: Text(AppStrings.mapScreen, style: TextStyle(fontSize: 24)),
+  ),
   // const ChargersScreen(),
   const Center(
-    child: Text('👤 Profile Screen', style: TextStyle(fontSize: 24)),
+    child: Text(AppStrings.profileScreen, style: TextStyle(fontSize: 24)),
   ),
 ];

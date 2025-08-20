@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -35,9 +36,9 @@ class NearbyStationCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Station label
-                const Text(
-                  'Nearby Station',
-                  style: TextStyle(fontSize: 15, color: Colors.grey),
+                Text(
+                  AppStrings.nearbyStation,
+                  style: const TextStyle(fontSize: 15, color: Colors.grey),
                 ),
                 const SizedBox(height: 5),
 
@@ -110,7 +111,7 @@ class NearbyStationCard extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {},
-                  child: const Text('Get Direction'),
+                  child: const Text(AppStrings.getDirection),
                 ),
                 const SizedBox(height: 10),
 

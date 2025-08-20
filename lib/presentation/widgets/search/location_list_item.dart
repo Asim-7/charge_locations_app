@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 import '../../../data/models/charge_location.dart';
 import '../../../utils/address_utils.dart';
@@ -99,7 +100,7 @@ class LocationListItem extends StatelessWidget {
                         Icon(Icons.power, color: accentGreen, size: 16),
                         const SizedBox(width: 4),
                         Text(
-                          '$availableCount AVAILABLE',
+                          '$availableCount ${AppStrings.available}',
                           style: TextStyle(
                             fontSize: 13,
                             color: AppTheme.searchTextSecondary,

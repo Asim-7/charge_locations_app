@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:charge_locations_app/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
@@ -15,7 +16,7 @@ class LocationList extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(top: 64),
           child: Text(
-            'No locations found.',
+            AppStrings.noLocationsFound,
             style: TextStyle(fontSize: 18, color: AppTheme.searchTextSecondary),
           ),
         ),
