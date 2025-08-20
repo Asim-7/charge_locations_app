@@ -1,3 +1,4 @@
+import 'package:charge_locations_app/constants/app_strings.dart';
 import 'package:charge_locations_app/di/service_locator.dart';
 import 'package:charge_locations_app/navigation/app_router.dart';
 import 'package:charge_locations_app/presentation/screens/home_screen.dart';
@@ -14,7 +15,7 @@ class ChargeLocationsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Charge Locations',
+      title: AppStrings.chargeLocationsTitle,
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,
