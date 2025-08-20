@@ -11,26 +11,32 @@ import 'search_bloc_test.mocks.dart';
 // Mock the dependencies using: "flutter pub run build_runner build" in cmd
 @GenerateMocks([FetchLocationsUsecase, CachedLocationsUsecase])
 void main() {
-  test('LocationSearchBloc emits loaded state on success', () async {
-    final fetchLocations = MockFetchLocationsUsecase();
-    final cachedLocationsUsecase = MockCachedLocationsUsecase();
+  late MockFetchLocationsUsecase fetchLocations;
+  late MockCachedLocationsUsecase cachedLocationsUsecase;
+  late LocationSearchBloc bloc;
 
-    // Stub the methods
-    when(
-      fetchLocations.call(any),
-    ).thenAnswer((_) async => [/* dummy ChargeLocation */]);
-    when(
-      cachedLocationsUsecase.getLastCachedLocations(),
-    ).thenAnswer((_) async => [/* dummy ChargeLocation */]);
-    when(
-      cachedLocationsUsecase.saveLastSearch(any, any),
-    ).thenAnswer((_) async {});
-
-    final bloc = LocationSearchBloc(
+  setUp(() {
+    fetchLocations = MockFetchLocationsUsecase();
+    cachedLocationsUsecase = MockCachedLocationsUsecase();
+    bloc = LocationSearchBloc(
       fetchLocations: fetchLocations,
       cachedLocationsUsecase: cachedLocationsUsecase,
     );
+    // Common stubs
+    when(fetchLocations.call(any)).thenAnswer((_) async => []);
+    when(
+      cachedLocationsUsecase.getLastCachedLocations(),
+    ).thenAnswer((_) async => []);
+    when(
+      cachedLocationsUsecase.saveLastSearch(any, any),
+    ).thenAnswer((_) async {});
+  });
 
+  tearDown(() {
+    bloc.close();
+  });
+
+  test('LocationSearchBloc emits loaded state on success', () async {
     bloc.add(SearchLocations('Amsterdam'));
 
     await expectLater(
