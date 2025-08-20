@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// A placeholder widget for the car image.
 class CarImagePlaceholder extends StatelessWidget {
   const CarImagePlaceholder({super.key});
 

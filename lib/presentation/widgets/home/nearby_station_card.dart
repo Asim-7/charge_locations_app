@@ -1,6 +1,7 @@
 import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
+/// A card widget that displays information about a nearby charging station.
 class NearbyStationCard extends StatelessWidget {
   final String stationName;
   final double stationDistanceKm;
@@ -33,11 +34,14 @@ class NearbyStationCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Station label
                 const Text(
                   'Nearby Station',
                   style: TextStyle(fontSize: 15, color: Colors.grey),
                 ),
                 const SizedBox(height: 5),
+
+                // Station name
                 Text(
                   stationName,
                   style: const TextStyle(
@@ -46,8 +50,11 @@ class NearbyStationCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
+
+                // Station distance and time
                 Row(
                   children: [
+                    // Station distance
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 8,
@@ -63,6 +70,8 @@ class NearbyStationCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 8),
+
+                    // Station time
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 8,
@@ -83,6 +92,7 @@ class NearbyStationCard extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 16),
+
           // Right column: Button and route row
           Expanded(
             flex: 2,
@@ -90,6 +100,7 @@ class NearbyStationCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // Get Direction button
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppTheme.icon,
@@ -102,21 +113,28 @@ class NearbyStationCard extends StatelessWidget {
                   child: const Text('Get Direction'),
                 ),
                 const SizedBox(height: 10),
+
+                // Route information
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    // Start location
                     Icon(
                       Icons.location_on,
                       color: AppTheme.routeStart,
                       size: 25,
                     ),
+
+                    // Route line
                     Container(
                       width: 80,
                       height: 2,
                       color: AppTheme.routeLine,
                       margin: const EdgeInsets.symmetric(horizontal: 8),
                     ),
+
+                    // End location
                     Icon(Icons.ev_station, color: AppTheme.routeEnd, size: 25),
                   ],
                 ),

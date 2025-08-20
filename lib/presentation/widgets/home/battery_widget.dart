@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
 
+/// A widget that displays the battery level of the car.
 class BatteryWidget extends StatelessWidget {
   final int batteryPercent;
   final Color accentGreen;
@@ -30,8 +31,11 @@ class BatteryWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // Battery icon
           Icon(Icons.battery_4_bar_rounded, color: accentGreen, size: 70),
           const SizedBox(height: 8),
+
+          // Battery percentage text
           Text(
             '$batteryPercent%',
             style: const TextStyle(

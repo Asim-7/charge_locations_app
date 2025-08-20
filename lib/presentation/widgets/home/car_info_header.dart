@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:charge_locations_app/theme/app_theme.dart';
 
+/// A header widget that displays the car's information.
 class CarInfoHeader extends StatelessWidget {
   final String carModel;
   final String carBrand;
@@ -19,9 +20,11 @@ class CarInfoHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        // A column displaying the car model and brand.
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // The car model text.
             Text(
               carModel,
               style: const TextStyle(
@@ -30,6 +33,8 @@ class CarInfoHeader extends StatelessWidget {
                 color: AppTheme.textPrimary,
               ),
             ),
+
+            // The car brand text.
             Text(
               carBrand,
               style: const TextStyle(
@@ -39,8 +44,11 @@ class CarInfoHeader extends StatelessWidget {
             ),
           ],
         ),
+
+        // A stack displaying the notification icon and count.
         Stack(
           children: [
+            // Notification icon button
             IconButton(
               icon: const Icon(
                 Icons.notifications_none_outlined,
@@ -49,6 +57,8 @@ class CarInfoHeader extends StatelessWidget {
               ),
               onPressed: () {},
             ),
+
+            // Notification badge
             if (notificationCount > 0)
               Positioned(
                 right: 8,
