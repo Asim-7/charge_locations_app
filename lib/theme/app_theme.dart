@@ -12,8 +12,6 @@ class AppTheme {
   static const Color searchIcon = Colors.black;
   static const Color searchIconSecondary = Colors.grey;
   static const Color accentGreen = Color(0xFF6CF05A);
-  static const Color searchTextPrimary = searchIcon;
-  static const Color searchTextSecondary = searchIconSecondary;
   static const Color searchError = Colors.red;
   static const Color searchIconBg = Color(0xFFE8F5E9);
   static const Color searchListAvailableBg = Color(

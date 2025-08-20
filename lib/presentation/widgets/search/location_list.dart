@@ -17,7 +17,7 @@ class LocationList extends StatelessWidget {
           padding: EdgeInsets.only(top: 64),
           child: Text(
             AppStrings.noLocationsFound,
-            style: TextStyle(fontSize: 18, color: AppTheme.searchTextSecondary),
+            style: TextStyle(fontSize: 18, color: AppTheme.searchIconSecondary),
           ),
         ),
       );

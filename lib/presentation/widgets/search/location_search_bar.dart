@@ -46,7 +46,7 @@ class LocationSearchBar extends StatelessWidget {
                         )
                         : IconButton(
                           icon: const Icon(Icons.search),
-                          color: AppTheme.searchTextSecondary,
+                          color: AppTheme.searchIconSecondary,
                           onPressed: onSearch,
                           tooltip: 'Search',
                         ),

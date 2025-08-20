@@ -101,7 +101,7 @@ class LocationListItem extends StatelessWidget {
                           '$availableCount ${AppStrings.available}',
                           style: TextStyle(
                             fontSize: 13,
-                            color: AppTheme.searchTextSecondary,
+                            color: AppTheme.searchIconSecondary,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -110,7 +110,7 @@ class LocationListItem extends StatelessWidget {
                           '/ $totalCount EVSEs',
                           style: const TextStyle(
                             fontSize: 13,
-                            color: AppTheme.searchTextSecondary,
+                            color: AppTheme.searchIconSecondary,
                           ),
                         ),
                       ],
