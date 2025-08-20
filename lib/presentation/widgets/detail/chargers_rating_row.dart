@@ -1,5 +1,5 @@
+import 'package:charge_locations_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// A row displaying the rating and review count for a charging station.
 class ChargersRatingRow extends StatelessWidget {
@@ -10,7 +10,7 @@ class ChargersRatingRow extends StatelessWidget {
     return Row(
       children: [
         // Rating Icon
-        const Icon(Icons.star, color: AppTheme.star, size: 17),
+        const Icon(Icons.star, color: AppColors.star, size: 17),
         const SizedBox(width: 2),
 
         // Rating Text
