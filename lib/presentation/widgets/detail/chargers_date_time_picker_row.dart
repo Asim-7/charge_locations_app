@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// A row containing date and time pickers for selecting a charging appointment.
 class ChargersDateTimePickerRow extends StatelessWidget {
@@ -20,9 +19,9 @@ class ChargersDateTimePickerRow extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             child: Row(
               children: [
-                const Icon(
+                Icon(
                   Icons.calendar_today,
-                  color: AppTheme.iconSecondary,
+                  color: Theme.of(context).colorScheme.onPrimaryFixed,
                   size: 18,
                 ),
                 const SizedBox(width: 6),
@@ -44,9 +43,9 @@ class ChargersDateTimePickerRow extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             child: Row(
               children: [
-                const Icon(
+                Icon(
                   Icons.access_time,
-                  color: AppTheme.iconSecondary,
+                  color: Theme.of(context).colorScheme.onPrimaryFixed,
                   size: 18,
                 ),
                 const SizedBox(width: 6),

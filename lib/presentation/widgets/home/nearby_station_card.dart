@@ -1,5 +1,4 @@
 import 'package:charge_locations_app/constants/app_strings.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 /// A card widget that displays information about a nearby charging station.
@@ -138,7 +137,7 @@ class NearbyStationCard extends StatelessWidget {
                     // End location
                     Icon(
                       Icons.ev_station,
-                      color: AppTheme.statusAvailable,
+                      color: Theme.of(context).colorScheme.tertiary,
                       size: 25,
                     ),
                   ],

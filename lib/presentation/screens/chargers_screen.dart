@@ -2,7 +2,6 @@ import 'package:charge_locations_app/data/models/charge_location.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/connector_list.dart';
 import 'package:charge_locations_app/utils/address_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_header.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_rating_row.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_distance_time_row.dart';
@@ -23,18 +22,21 @@ class ChargersScreen extends StatelessWidget {
     final subtitleText = addressParts[1];
 
     return Scaffold(
-      backgroundColor: AppTheme.backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Stack(
         children: [
           // Gradient header outside SafeArea
           Container(
             height: 200,
             width: double.infinity,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [AppTheme.gradientStart, AppTheme.gradientEnd],
+                colors: [
+                  Theme.of(context).colorScheme.scrim,
+                  Theme.of(context).colorScheme.surfaceTint,
+                ],
               ),
             ),
           ),

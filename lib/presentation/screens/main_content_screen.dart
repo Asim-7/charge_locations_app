@@ -6,7 +6,6 @@ import '../widgets/home/distance_energy_row.dart';
 import '../widgets/home/charging_port_card.dart';
 import '../widgets/home/nearby_station_card.dart';
 import '../../data/providers/main_content_dummy_data.dart';
-import 'package:charge_locations_app/theme/app_theme.dart';
 
 /// Screen displaying the main content for the user's vehicle.
 class MainContentScreen extends StatelessWidget {
@@ -63,7 +62,7 @@ class MainContentScreen extends StatelessWidget {
               stationDistanceKm: stationDistanceKm,
               stationTimeMin: stationTimeMin,
               accentGreen: Theme.of(context).primaryColor,
-              bgColor: AppTheme.backgroundColor,
+              bgColor: Theme.of(context).colorScheme.surface,
             ),
           ],
         ),

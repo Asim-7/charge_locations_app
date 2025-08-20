@@ -11,14 +11,13 @@ class AppTheme {
   static const Color searchError = Colors.red;
   static const Color searchIconBg = Color(0xFFE8F5E9);
   static const Color searchListAvailableBg = Color(0x216CF05A);
-  static const Color searchListUnavailableBg = Color(0x21FF0000); // Done here
+  static const Color searchListUnavailableBg = Color(0x21FF0000);
   static const Color statusAvailable = Colors.green;
   static const Color backgroundColor = Color(0xFFF4F6F8);
   static const Color gradientStart = Color(0xFFE0F7FA); // Light cyan
   static const Color gradientEnd = Color(0x00E0F7FA); // Transparent fade
   static const Color star = Colors.amber;
   static const Color iconSecondary = Colors.black54;
-  static const Color favoriteBorder = searchIcon;
 
   // Dark mode colors (derived to match accents and structure)
   static const Color darkSearchCard = Color(0xFF232429);
@@ -37,7 +36,6 @@ class AppTheme {
   static const Color darkGradientEnd = Color(0x00263238); // Transparent fade
   static const Color darkStar = Colors.amber;
   static const Color darkIconSecondary = Colors.white70;
-  static const Color darkFavoriteBorder = darkSearchIcon;
 
   // Light ThemeData
   static final ThemeData lightTheme = ThemeData(
@@ -49,6 +47,7 @@ class AppTheme {
       primary: accentGreen,
       onPrimary: searchIcon,
       onPrimaryContainer: searchIconBg,
+      onPrimaryFixed: iconSecondary,
       secondary: searchIconSecondary,
       onSecondary: searchIcon,
       error: searchError,
@@ -125,6 +124,7 @@ class AppTheme {
       primary: darkAccentGreen,
       onPrimary: darkSearchIcon,
       onPrimaryContainer: darkSearchIconBg,
+      onPrimaryFixed: darkIconSecondary,
       secondary: darkSearchIconSecondary,
       onSecondary: darkSearchIcon,
       error: darkSearchError,
