@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 /// Widget to display a search bar for locations
-class LocationSearchBarV2 extends StatelessWidget {
+class LocationSearchBar extends StatelessWidget {
   final TextEditingController controller;
   final bool isLoading;
   final VoidCallback onSearch;
 
-  const LocationSearchBarV2({
+  const LocationSearchBar({
     required this.controller,
     required this.isLoading,
     required this.onSearch,

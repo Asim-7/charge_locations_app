@@ -1,7 +1,7 @@
 import 'package:charge_locations_app/theme/app_theme.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_event.dart';
 import 'package:charge_locations_app/presentation/blocs/search/search_state.dart';
-import 'package:charge_locations_app/presentation/widgets/search/location_search_bar_v2.dart';
+import 'package:charge_locations_app/presentation/widgets/search/location_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../blocs/search/search_bloc.dart';
@@ -75,7 +75,7 @@ class _SearchScreenState extends State<SearchScreen> {
               BlocSelector<LocationSearchBloc, LocationSearchState, bool>(
                 selector: (state) => state is LocationSearchLoading,
                 builder: (context, isLoading) {
-                  return LocationSearchBarV2(
+                  return LocationSearchBar(
                     controller: _controller,
                     isLoading: isLoading,
                     onSearch: () {
