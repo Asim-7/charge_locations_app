@@ -1,14 +1,13 @@
-import 'package:charge_locations_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 /// Returns the color for a connector status string.
-Color getStatusColor(String status) {
+Color getStatusColor(BuildContext context, String status) {
   switch (status) {
     case 'AVAILABLE':
-      return AppColors.statusAvailable;
+      return ThemeData().colorScheme.tertiary;
     case 'CHARGING':
-      return AppColors.searchError;
+      return ThemeData().colorScheme.error;
     default:
-      return AppColors.searchIconSecondary;
+      return ThemeData().colorScheme.onSurface;
   }
 }

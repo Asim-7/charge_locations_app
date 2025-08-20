@@ -9,7 +9,7 @@ class ConnectorItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final statusColor = getStatusColor(connector.status);
+    final statusColor = getStatusColor(context, connector.status);
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
