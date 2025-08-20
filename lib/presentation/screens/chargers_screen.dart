@@ -8,6 +8,7 @@ import 'package:charge_locations_app/presentation/widgets/detail/chargers_rating
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_distance_time_row.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/chargers_date_time_picker_row.dart';
 
+/// Screen displaying details for a specific charging station.
 class ChargersScreen extends StatelessWidget {
   final ChargeLocation location;
 

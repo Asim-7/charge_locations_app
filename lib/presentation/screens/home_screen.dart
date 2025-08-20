@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:charge_locations_app/presentation/blocs/navigation/bottom_nav_cubit.dart';
 import 'package:charge_locations_app/di/service_locator.dart';
 
+/// Home screen displaying the main content and navigation.
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   static final List<Widget> _screens = getHomeScreens();
