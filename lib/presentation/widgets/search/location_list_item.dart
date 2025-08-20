@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/charge_location.dart';
+import '../../../utils/address_utils.dart';
 
 /// Widget to display a single location in the search results
 class LocationListItem extends StatelessWidget {
@@ -30,17 +31,10 @@ class LocationListItem extends StatelessWidget {
     final iconColor = isMostlyAvailable ? accentGreen : Colors.red;
     final iconBgLogo = Color(0xFFE8F5E9);
 
-    // Split address at first comma
-    String address = location.address;
-    String titleText = address;
-    String subtitleText = '';
-    if (address.contains(',')) {
-      final idx = address.indexOf(',');
-      titleText = address.substring(0, idx).trim();
-      subtitleText = address.substring(idx + 1).trim();
-    } else {
-      subtitleText = address;
-    }
+    // Split address using reusable function from utils
+    final addressParts = splitAddress(location.address);
+    final titleText = addressParts[0];
+    final subtitleText = addressParts[1];
 
     return Material(
       color: Colors.transparent,

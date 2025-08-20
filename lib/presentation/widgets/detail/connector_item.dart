@@ -1,18 +1,25 @@
-import 'package:charge_locations_app/presentation/screens/chargers_screen.dart';
+import 'package:charge_locations_app/data/models/evse.dart';
 import 'package:flutter/material.dart';
 
 // Widget for a single connector item
 class ConnectorItem extends StatelessWidget {
-  final Connector connector;
+  final Evse connector;
   const ConnectorItem({super.key, required this.connector});
 
   @override
   Widget build(BuildContext context) {
     const accentGreen = Color(0xFF6CF05A);
-    // final iconBg =
-    //     isMostlyAvailable
-    //         ? accentGreen.withAlpha((0.13 * 255).toInt())
-    //         : Colors.red.withAlpha((0.13 * 255).toInt());
+    Color statusColor;
+    switch (connector.status) {
+      case 'AVAILABLE':
+        statusColor = Colors.green;
+        break;
+      case 'CHARGING':
+        statusColor = Colors.red;
+        break;
+      default:
+        statusColor = Colors.grey;
+    }
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
@@ -27,7 +34,7 @@ class ConnectorItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: Container(
               decoration: BoxDecoration(
-                color: accentGreen.withAlpha((0.13 * 255).toInt()),
+                color: statusColor.withAlpha((0.13 * 255).toInt()),
                 shape: BoxShape.circle,
               ),
               padding: const EdgeInsets.all(10),
@@ -38,9 +45,15 @@ class ConnectorItem extends StatelessWidget {
               ),
             ),
           ),
-          title: Text(
-            connector.name,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                connector.connectorType,
+                style: const TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 4), // Minor vertical spacing
+            ],
           ),
           subtitle: Row(
             children: [
@@ -48,15 +61,18 @@ class ConnectorItem extends StatelessWidget {
                 children: [
                   const Icon(Icons.attach_money, size: 17, color: Colors.black),
                   const SizedBox(width: 2),
-                  Text(connector.price, style: const TextStyle(fontSize: 13)),
+                  Text('\$1.00/ kWh', style: const TextStyle(fontSize: 13)),
                 ],
               ),
               const SizedBox(width: 13),
               Row(
                 children: [
-                  const Icon(Icons.ev_station, size: 17, color: Colors.black54),
+                  const Icon(Icons.ev_station, size: 17, color: accentGreen),
                   const SizedBox(width: 2),
-                  Text(connector.slot, style: const TextStyle(fontSize: 13)),
+                  Text(
+                    connector.powerType,
+                    style: const TextStyle(fontSize: 13),
+                  ),
                 ],
               ),
             ],

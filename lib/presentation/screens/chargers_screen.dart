@@ -1,28 +1,22 @@
+import 'package:charge_locations_app/data/models/charge_location.dart';
 import 'package:charge_locations_app/presentation/widgets/detail/connector_list.dart';
+import 'package:charge_locations_app/utils/address_utils.dart';
 import 'package:flutter/material.dart';
 
-// Dummy connector data
-class Connector {
-  final String name;
-  final String price;
-  final String slot;
-
-  Connector({required this.name, required this.price, required this.slot});
-}
-
-final connectors = [
-  Connector(name: 'Type A', price: '\$1.00/ kWh', slot: 'Slot A'),
-  Connector(name: 'CHAdeMO', price: '\$0.5/ kWh', slot: 'Slot B'),
-  Connector(name: 'Type B', price: '\$0.75/ kWh', slot: 'Slot C'),
-];
-
 class ChargersScreen extends StatelessWidget {
-  const ChargersScreen({super.key});
+  final ChargeLocation location;
+
+  const ChargersScreen({super.key, required this.location});
 
   @override
   Widget build(BuildContext context) {
     const accentGreen = Color(0xFF6CF05A);
     const subtitleColor = Colors.grey;
+
+    // Split address using reusable function from utils
+    final addressParts = splitAddress(location.address);
+    final titleText = addressParts[0];
+    final subtitleText = addressParts[1];
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F8),
@@ -64,7 +58,7 @@ class ChargersScreen extends StatelessWidget {
                   const SizedBox(height: 40),
                   // Title and rating
                   Text(
-                    'Pall Mall Station',
+                    titleText,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 21,
@@ -73,7 +67,7 @@ class ChargersScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    '1 White Hall Palace, Street 5, London',
+                    subtitleText,
                     style: TextStyle(fontSize: 14, color: subtitleColor),
                   ),
                   const SizedBox(height: 6),
@@ -157,13 +151,13 @@ class ChargersScreen extends StatelessWidget {
                   const SizedBox(height: 18),
                   // Available Connectors
                   Text(
-                    '${connectors.length} Connectors',
+                    '${location.evses.length} Connector(s)',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                   const SizedBox(height: 10),
 
                   // Connector List
-                  ConnectorList(connectors: connectors),
+                  ConnectorList(connectors: location.evses),
 
                   const SizedBox(height: 18),
                   // Choose Date & Time
