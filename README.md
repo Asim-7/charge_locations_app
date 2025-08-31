@@ -5,6 +5,23 @@ A modern Flutter app to search for EV charge locations by city, view real-time a
 
 ---
 
+## Screenshots
+### Light Mode
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/1_main_light.png" alt="Screenshot 1" width="22%">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/2_search_light.png" alt="Screenshot 2" width="22%">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/3_details_light.png" alt="Screenshot 3" width="22%">
+</div>
+
+### Dark Mode
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/1_main_dark.png" alt="Screenshot 1" width="22%">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/2_search_dark.png" alt="Screenshot 2" width="22%">
+  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/3_details_dark.png" alt="Screenshot 3" width="22%">
+</div>
+
+---
+
 ## Key Features
 
 - **Search by City:** Find EV charging stations in any city with instant results.
@@ -37,7 +54,6 @@ A modern Flutter app to search for EV charge locations by city, view real-time a
 - Facilitates robust error handling and future platform expansion
 
 **Why Bloc State Management:**  
-- Aligns with GreenFlux's current practices  
 - Offers explicit event/state handling for robust, predictable state management  
 - Scales well for larger, more complex applications  
 - Well-supported and documented in Flutter ecosystem
@@ -123,22 +139,5 @@ test/
 - **Testing Asynchronous Logic:** BLoC and repository logic required async test setup and proper use of mocks. Used `mockito` and `flutter_test` utilities to ensure reliable, isolated tests.
 - **Clean Architecture Discipline:** Keeping UI, domain, and data layers decoupled required careful dependency management and clear folder structure. Used a service locator for dependency injection and clear module boundaries.
 - **Dynamic Theming:** Ensured all widgets use theme colors for seamless light/dark mode. Solved by centralizing all color references in `AppTheme` and using `Theme.of(context)` where possible.
-
----
-
-## Screenshots
-### Light Mode
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/1_main_light.png" alt="Screenshot 1" width="22%">
-  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/2_search_light.png" alt="Screenshot 2" width="22%">
-  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/3_details_light.png" alt="Screenshot 3" width="22%">
-</div>
-
-### Dark Mode
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/1_main_dark.png" alt="Screenshot 1" width="22%">
-  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/2_search_dark.png" alt="Screenshot 2" width="22%">
-  <img src="https://github.com/Asim-7/charge_locations_app/blob/main/screenshots/3_details_dark.png" alt="Screenshot 3" width="22%">
-</div>
 
 ---
